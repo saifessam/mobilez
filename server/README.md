@@ -1,1 +1,0 @@
-# Mobilez Web App (Server)
