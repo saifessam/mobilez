@@ -1,0 +1,16 @@
+main {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+main.transform-left {
+  translate: calc(-25vw - var(--spacing));
+}
+
+main.transform-right {
+  translate: calc(25vw + var(--spacing));
+}

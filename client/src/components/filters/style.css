@@ -1,0 +1,42 @@
+.filters {
+  width: 0;
+  height: fit-content;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--spacing);
+  background-color: var(--background-secondary);
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 5;
+  border-radius: var(--border-radius);
+}
+
+.filters.active {
+  width: 25vw;
+  padding: var(--spacing);
+  margin-left: var(--spacing);
+}
+
+.filters .filters-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters .filters-header span {
+  font-size: var(--large-font);
+}
+
+.filters .filters-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: var(--half-spacing);
+}

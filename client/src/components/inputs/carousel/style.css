@@ -1,0 +1,16 @@
+.carousel-input {
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-input button {
+  padding: 0;
+}
+
+.carousel-input input {
+  text-align: center;
+}
+
+.carousel-input svg path {
+  fill: var(--accent-color) !important;
+}

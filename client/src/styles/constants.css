@@ -1,0 +1,30 @@
+:root {
+  /* colors */
+  --background-primary: #e5e5e5;
+  --background-secondary: #ffffff;
+  --text-primary: #000000;
+  --text-primary-transparent: #000000c0;
+  --text-secondary: #8b8c89;
+  --text-secondary-transparent: #8b8c89c0;
+  --accent-color: #1d41ff;
+  --accent-color-transparent: #1d41ff85;
+  --fail-color: #d90429;
+  --success-color: #0ead69;
+  --transparent-overlay: linear-gradient(0deg, #08080880, #08080880);
+  --gradient-shade: linear-gradient(180deg, #08080800 50%, #080808 100%);
+  --shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+
+  /*fonts*/
+  --extra-small-font: clamp(8px, 10px, 12px);
+  --small-font: clamp(8px, 12px, 16px);
+  --medium-font: clamp(12px, 16px, 20px);
+  --large-font: clamp(20px, 24px, 28px);
+  --extra-large-font: clamp(32px, 40px, 48px);
+  --extra-large-fontx2: clamp(40px, 48px, 56px);
+
+  /*units*/
+  --spacing: 24px;
+  --half-spacing: 12px;
+  --border-radius: 12px;
+  --circular-border-radius: 100px;
+}

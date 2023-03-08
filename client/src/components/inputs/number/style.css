@@ -1,0 +1,11 @@
+.number-input input {
+  text-align: center;
+}
+
+.number-input button {
+  padding: 0;
+}
+
+.number-input svg path {
+  fill: var(--accent-color) !important;
+}

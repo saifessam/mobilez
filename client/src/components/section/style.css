@@ -1,0 +1,101 @@
+section {
+  width: 100%;
+}
+
+section.has-padding {
+  padding: var(--spacing);
+}
+
+section.center-content {
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+section.add-spacing {
+  gap: var(--spacing);
+}
+
+section.fit-content {
+  width: auto !important;
+}
+
+section .section-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing);
+}
+
+section .section-header h3 {
+  font-size: var(--large-font);
+}
+
+section.main {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+}
+
+section.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+section.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+section.grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--spacing);
+}
+
+section.grid > * {
+  width: calc(25% - var(--spacing));
+}
+
+/* section.grid {
+  display: grid;
+  justify-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  gap: var(--spacing);
+} */
+
+section.grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+  gap: var(--spacing);
+}
+
+@media (max-width: 559px) {
+  section.grid > * {
+    width: calc(100% - var(--spacing));
+  }
+}
+
+@media (min-width: 560px) and (max-width: 767px) {
+  section.grid > * {
+    width: calc(50% - var(--spacing));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  section.grid > * {
+    width: calc(33.33% - var(--spacing));
+  }
+}

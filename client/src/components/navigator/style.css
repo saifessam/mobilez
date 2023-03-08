@@ -1,0 +1,21 @@
+.navigator {
+  position: sticky;
+  top: var(--spacing);
+  padding: var(--half-spacing);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  background-color: var(--background-secondary);
+}
+
+.navigator ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--half-spacing);
+}
+
+.navigator ul li,
+.navigator ul li a button {
+  width: 100%;
+}

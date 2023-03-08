@@ -1,0 +1,61 @@
+@import url('./constants.css');
+@import url('./fonts.css');
+@import url('./globals.css');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: var(--medium-font);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  /* outline: 1px solid red; */
+  z-index: 0;
+  transition: 300ms;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -ms-transition: 300ms;
+  -o-transition: 300ms;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-primary);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+input,
+textarea {
+  font-size: var(--small-font);
+}
+
+::placeholder {
+  font-weight: 400;
+  font-size: var(--small-font);
+  color: var(--text-secondary);
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: var(--spacing);
+  padding: var(--spacing);
+}

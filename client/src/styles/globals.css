@@ -1,0 +1,77 @@
+.input-container {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: var(--half-spacing);
+  padding: var(--half-spacing);
+  background-color: var(--background-primary);
+  border-radius: var(--border-radius);
+}
+
+.input-container .input-container-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--small-font);
+  color: var(--text-secondary);
+}
+
+.input-container .input-container-label .input-container-label-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: calc(var(--half-spacing) / 2);
+}
+
+.input-container .input-container-label .input-container-label-selector button {
+  padding: 0;
+}
+
+.input-container .input-container-label .input-container-label-selector button span {
+  color: var(--text-secondary);
+  font-size: var(--extra-small-font);
+}
+
+.input-container .input-container-label .input-container-label-error {
+  font-size: var(--small-font);
+  color: var(--fail-color);
+}
+
+.input-container .input-container-label svg {
+  width: var(--medium-font);
+  height: var(--medium-font);
+}
+
+.input-container .input-container-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--half-spacing);
+  padding: var(--half-spacing);
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
+}
+
+.input-container .input-container-field input,
+.input-container .input-container-field textarea {
+  width: 100%;
+}
+
+.input-container .input-container-field textarea {
+  resize: none;
+}
+
+.input-container .input-container-field button svg {
+  width: var(--medium-font);
+  height: var(--medium-font);
+  cursor: pointer;
+}
+
+.input-container .input-container-field button svg path {
+  fill: var(--text-secondary);
+}

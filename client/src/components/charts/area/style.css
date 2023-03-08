@@ -1,0 +1,23 @@
+.area-chart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: var(--spacing);
+  padding: var(--spacing);
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.area-chart .area-chart-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.area-chart .area-chart-header span {
+  font-size: var(--large-font);
+}
