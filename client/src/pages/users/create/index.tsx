@@ -35,7 +35,7 @@ function UserCreationPage() {
 
 	return (
 		<Section alignment='main' centerContent>
-			<Form onSubmit={handleSubmit} title='Sign Up' link={{ path: "/users/sign-in", label: "Sign in here" }} message={message} loading={loading} assistance>
+			<Form onSubmit={handleSubmit} title='Sign Up' link={{ path: "/users/authorize", label: "Sign in here" }} message={message} loading={loading} assistance>
 				<TextInput name="name" label='Full name' placeholder='Saif Essam' setter={setData} />
 				<EmailInput setter={setData} />
 				<PhoneInput setter={setData} />

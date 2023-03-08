@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '../button';
 import Icons from './../../data/icons';
-import currencyFormat from '../../utilities/currencyFormat';
+import currencyFormat from '../../utilities/currency-format';
 import './style.css';
 
 interface Props {

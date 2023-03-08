@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react';
-import handleChange from '../../../utilities/handleChange';
+import handleChange from '../../../utilities/handle-change';
 import './style.css';
 
 interface Props {

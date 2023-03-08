@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 
-export function createToken(id?: string): string {
+export function createToken(id?: string, role?: string): string {
 	const secret: string = `${process.env.AUTH_TOKEN_SECRET}`;
-	const token: string = jwt.sign({ id }, secret, { expiresIn: '2 days' });
+	const token: string = jwt.sign({ id, role }, secret, { expiresIn: '2 days' });
 
 	return token;
 }

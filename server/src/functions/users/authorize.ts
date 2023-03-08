@@ -19,7 +19,7 @@ async function authorize(req: Request, res: Response) {
 			if (!validPassword) return res.status(403).json({ succeed: false, response: "Wrong credentials" });
 
 			// 4. Generating user authorization token
-			const token: string = createToken(existingUser._id.toString());
+			const token: string = createToken(existingUser._id.toString(), existingUser.role);
 
 			// 5. Setting auth_token cookie
 			return res.status(202).cookie('auth_token', token, { path: '/', maxAge: 1000 * 60 * 60 * 24 * 2, sameSite: false }).json({ succeed: true, response: "User authorized successfully" });

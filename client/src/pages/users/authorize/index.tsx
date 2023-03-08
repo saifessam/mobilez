@@ -1,9 +1,9 @@
 import { useState, SyntheticEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Section from '../../../components/section';
 import Form from '../../../components/form';
 import PasswordInput from '../../../components/inputs/password';
 import EmailInput from '../../../components/inputs/email';
-import { useNavigate } from 'react-router-dom';
 import AuthorizationData from '../../../types/authorization-data';
 import Message from '../../../types/message';
 
@@ -33,7 +33,7 @@ function UserAuthorizationPage() {
 
 	return (
 		<Section alignment='main' centerContent>
-			<Form onSubmit={handleSubmit} title='Sign In' link={{ path: "/users/sign-up", label: "Sign up here" }} message={message} loading={loading} assistance>
+			<Form onSubmit={handleSubmit} title='Sign In' link={{ path: "/users/create", label: "Sign up here" }} message={message} loading={loading} assistance>
 				<EmailInput setter={setData} />
 				<PasswordInput setter={setData} />
 			</Form>

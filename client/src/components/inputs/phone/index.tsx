@@ -1,6 +1,6 @@
 import { useState, ChangeEvent } from 'react';
 import Icons from '../../../data/icons';
-import handleChange from '../../../utilities/handleChange';
+import handleChange from '../../../utilities/handle-change';
 import './style.css';
 
 interface Props {

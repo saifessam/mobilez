@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Button from './../../../components/button';
-import currencyFormat from '../../../utilities/currencyFormat';
+import currencyFormat from '../../../utilities/currency-format';
 import Icons from './../../../data/icons';
 import './style.css';
 

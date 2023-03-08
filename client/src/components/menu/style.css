@@ -54,10 +54,11 @@
 .menu .menu-body ul li a {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: var(--half-spacing);
   background-color: var(--background-primary);
+  border: thin solid transparent;
   border-radius: var(--border-radius);
   width: 100%;
   padding: var(--half-spacing);
@@ -69,10 +70,16 @@
 }
 
 .menu .menu-body ul li a.active {
-  background-color: var(--accent-color);
-  color: var(--background-secondary);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .menu .menu-body ul li a.active svg path {
-  fill: var(--background-secondary);
+  fill: var(--accent-color);
+}
+
+.menu .menu-body ul li button {
+  width: 100%;
+  justify-content: space-between;
+  gap: var(--half-spacing);
 }

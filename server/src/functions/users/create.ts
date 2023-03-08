@@ -33,10 +33,10 @@ async function create(req: Request, res: Response) {
 			const user = await User.create({ ...req.body, password: hashedPassword, role: firstUser === 0 ? "ADMIN" : "CONSUMER" });
 
 			// 8. Generating user authorization token
-			const token: string = createToken(user._id.toString());
+			const token: string = createToken(user._id.toString(), user.role);
 
 			// 9. Setting auth_token cookie
-			return res.status(201).cookie('auth_token', token, { path: '/', maxAge: 1000 * 60 * 60 * 24 * 2, httpOnly: true, sameSite: false }).json({ succeed: true, response: "User created successfully" });
+			return res.status(201).cookie('auth_token', token, { path: '/', maxAge: 1000 * 60 * 60 * 24 * 2, sameSite: false }).json({ succeed: true, response: "User created successfully" });
 		} catch (error) {
 			return res.status(400).json({ succeed: false, response: "Error creating user" });
 		}

@@ -2,7 +2,7 @@ import { useState, ChangeEvent } from 'react';
 import Icons from './../../../data/icons';
 import Button from './../../../components/button';
 import './style.css';
-import handleChange from '../../../utilities/handleChange';
+import handleChange from '../../../utilities/handle-change';
 
 interface Props {
 	setter: any;
