@@ -1,4 +1,5 @@
 declare type DeviceData = {
+	_id: string | null;
 	type: string | null;
 	condition: string | null;
 	brand: string | null;

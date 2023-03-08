@@ -65,9 +65,9 @@ section.grid {
   gap: var(--spacing);
 }
 
-section.grid > * {
+/* section.grid > * {
   width: calc(25% - var(--spacing));
-}
+} */
 
 /* section.grid {
   display: grid;

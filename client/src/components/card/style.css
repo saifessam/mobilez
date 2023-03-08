@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
   background-color: var(--background-secondary);
   border-radius: var(--border-radius);
 }
@@ -10,7 +10,7 @@
 .card .card-image {
   max-width: 280px;
   aspect-ratio: 1/1;
-  padding: var(--spacing);
+  padding: var(--half-spacing);
   overflow: hidden;
 }
 
@@ -30,49 +30,42 @@
 }
 
 .card .card-details {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   gap: var(--half-spacing);
   padding: var(--half-spacing);
 }
 
 .card .card-details .card-details-text {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .card .card-details .card-details-text > * {
+  max-width: 280px;
+  overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.card .card-details .card-details-text span:nth-child(2) {
-  font-size: var(--small-font);
-  color: var(--text-secondary);
-}
-
+.card .card-details .card-details-text span:nth-child(2),
 .card .card-details .card-details-text span:nth-child(3) {
   font-size: var(--small-font);
   color: var(--text-secondary);
 }
 
 .card .card-details .card-details-actions {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: stretch;
+  align-items: flex-start;
   gap: var(--half-spacing);
 }
 
 .card .card-details .card-details-actions button:nth-child(1) {
-  width: 100%;
+  flex: 1;
 }

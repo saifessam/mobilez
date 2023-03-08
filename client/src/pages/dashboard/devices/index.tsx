@@ -13,13 +13,14 @@ import DeviceData from "../../../types/device-data";
 import Message from "../../../types/message";
 
 function DashboardDevicesPage() {
-	const [data, setData] = useState<DeviceData>({ type: null, condition: null, brand: null, model: null, color: null, image: null, ram: null, rom: null, price: 0, sales: 0, stock: 0 });
+	const [data, setData] = useState<DeviceData>();
 	const [loading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<Message>({ succeed: null, response: null });
 
 	async function handleSubmit(e: SyntheticEvent): Promise<void> {
 		e.preventDefault();
 		setLoading(true);
+		console.log(data);
 		try {
 			const options: RequestInit = { method: "POST", body: new Blob([JSON.stringify(data)], { type: 'application/json' }), cache: "no-store", credentials: "include" };
 			const response = await fetch("/devices/create", options);
