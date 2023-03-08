@@ -15,8 +15,6 @@
   background-color: transparent;
   border: none;
   outline: none;
-  /* outline: 1px solid red; */
-  z-index: 0;
   transition: 300ms;
   -webkit-transition: 300ms;
   -moz-transition: 300ms;
@@ -50,6 +48,7 @@ svg {
 }
 
 #root {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;

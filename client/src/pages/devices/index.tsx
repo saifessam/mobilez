@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Card from '../../components/card';
+import Loading from '../../components/loading';
 import DeviceData from '../../types/device-data';
 import Section from "./../../components/section";
 
@@ -23,9 +24,11 @@ function DevicesPage() {
 		setLoading(false);
 	}
 
+	if (loading) return <Loading message="Loading..." />;
+
 	return (
 		<Section alignment="grid">
-			{loading ? "Loading..." : devices?.map((device) => <Card data={device} key={device._id} />)}
+			{devices ? devices.map((device) => <Card data={device} key={device._id} />) : undefined}
 		</Section>
 	);
 }

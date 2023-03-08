@@ -1,5 +1,5 @@
 import AnnouncementData from '../../types/announcements-data';
-import './styles.css';
+import './style.css';
 
 interface Props {
 	data: AnnouncementData;

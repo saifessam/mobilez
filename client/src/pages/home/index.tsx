@@ -2,22 +2,29 @@ import { useEffect, useState } from "react";
 import Annoncement from "../../components/announcement";
 import Card from "../../components/card";
 import Carousel from "../../components/carousel";
+import Loading from "../../components/loading";
 import AnnouncementData from "../../types/announcements-data";
 import DeviceData from "../../types/device-data";
-import Section, { SectionHeader } from "./../../components/section";
+import Section from "./../../components/section";
 
 function HomePage() {
+	const [loading, setLoading] = useState<boolean>(false);
 	const [announcements, setAnnouncements] = useState<AnnouncementData[]>();
 	const [devices, setDevices] = useState<DeviceData[]>();
-	const [loading, setLoading] = useState<boolean>(false);
 
 	useEffect(() => {
-		getAnnouncements();
-		getDevices();
+		async function getData(): Promise<void> {
+			setLoading(true);
+			await getAnnouncements();
+			await getDevices();
+			setLoading(false);
+		}
+
+		getData();
 	}, []);
 
+
 	async function getAnnouncements(): Promise<void> {
-		setLoading(true);
 		try {
 			const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default" };
 			const response = await fetch("/announcements", options);
@@ -25,11 +32,9 @@ function HomePage() {
 		} catch (error) {
 			console.error("Request error", error);
 		}
-		setLoading(false);
 	}
 
 	async function getDevices(): Promise<void> {
-		setLoading(true);
 		try {
 			const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default" };
 			const response = await fetch("/devices", options);
@@ -37,15 +42,14 @@ function HomePage() {
 		} catch (error) {
 			console.error("Request error", error);
 		}
-		setLoading(false);
 	}
+
+	if (loading) return <Loading message="Loading..." />;
 
 	return (
 		<Section alignment="main" addSpacing>
-			{loading ? "Loading Announcements..." : announcements ? <Carousel slides={announcements.map((annoncement) => <Annoncement data={annoncement} key={annoncement._id} />)} /> : undefined}
-			<Section alignment="grid" title="Featured Devices">
-				{loading ? "Loading Devices..." : devices ? devices.map((device) => <Card data={device} key={device._id} />) : undefined}
-			</Section>
+			{announcements ? <Carousel slides={announcements.map((annoncement) => <Annoncement data={annoncement} key={annoncement._id} />)} /> : undefined}
+			{devices ? <Section alignment="grid" title="Featured Devices">{devices.map((device) => <Card data={device} key={device._id} />)}</Section> : undefined}
 		</Section>
 	);
 }
