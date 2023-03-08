@@ -9,7 +9,7 @@ import AnnouncementData from "../../../types/announcements-data";
 import Message from "../../../types/message";
 
 function DashboardAnnouncementsPage() {
-	const [data, setData] = useState<AnnouncementData>({ title: null, content: null, image: null });
+	const [data, setData] = useState<AnnouncementData>();
 	const [loading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<Message>({ succeed: null, response: null });
 
@@ -17,7 +17,7 @@ function DashboardAnnouncementsPage() {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			const options: RequestInit = { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(data), cache: "no-store" };
+			const options: RequestInit = { method: "POST", body: new Blob([JSON.stringify(data)], { type: 'application/json' }), cache: "no-store" };
 			const response = await fetch("/announcements/create", options);
 			await response.json().then((data) => setMessage(data));
 		} catch (error) {

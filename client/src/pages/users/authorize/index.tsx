@@ -22,7 +22,7 @@ function UserAuthorizationPage() {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			const options: RequestInit = { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(data), cache: "no-store", credentials: "include" };
+			const options: RequestInit = { method: "POST", body: new Blob([JSON.stringify(data)], { type: 'application/json' }), cache: "no-store", credentials: "include" };
 			const response = await fetch("/users/authorize", options);
 			await response.json().then((data) => handleAuthorization(data));
 		} catch (error) {

@@ -1,14 +1,11 @@
 .carousel {
   position: relative;
-  width: 35vw;
-  aspect-ratio: 1/1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  width: 100%;
+  height: 60vh;
   background-color: var(--background-secondary);
-  overflow: hidden;
   border-radius: var(--spacing);
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
 .carousel button {
@@ -26,9 +23,10 @@
   right: var(--half-spacing);
 }
 
-.carousel img {
+.carousel > *:not(button) {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  mix-blend-mode: multiply;
 }

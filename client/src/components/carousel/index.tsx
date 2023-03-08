@@ -3,24 +3,23 @@ import Button from './../button';
 import Icons from './../../data/icons';
 import './style.css';
 
-
 interface Props {
-	images: string[];
+	slides: JSX.Element[] | undefined;
 }
 
 function Carousel(props: Props) {
-	const [currentIndex, setCurrentIndex] = useState(1);
+	const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-	function prev() {
+	function prev(): void {
 		if (currentIndex === 0) {
-			setCurrentIndex(props.images.length - 1);
+			setCurrentIndex(props.slides!.length - 1);
 		} else {
 			setCurrentIndex((current: number) => current - 1);
 		}
 	}
 
-	function next() {
-		if (currentIndex === props.images.length - 1) {
+	function next(): void {
+		if (currentIndex === props.slides!.length - 1) {
 			setCurrentIndex(0);
 		} else {
 			setCurrentIndex((current: number) => current + 1);
@@ -29,9 +28,9 @@ function Carousel(props: Props) {
 
 	return (
 		<div className='carousel'>
-			<Button type="button" icon={<Icons.ArrowDownIcon />} action={() => prev()} secondary small />
-			<img src={require(props.images[0])} alt={"Device Thumbnail"} loading='lazy' />
-			<Button type="button" icon={<Icons.ArrowDownIcon />} action={() => next()} secondary small />
+			<Button type="button" icon={<Icons.ArrowLeftIcon />} action={prev} secondary small />
+			{props.slides![currentIndex]}
+			<Button type="button" icon={<Icons.ArrowRightIcon />} action={next} secondary small />
 		</div>
 	);
 }

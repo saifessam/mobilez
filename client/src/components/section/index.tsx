@@ -3,6 +3,9 @@ import Icons from './../../data/icons';
 import './style.css';
 
 interface Props {
+	title?: string;
+	withFilters?: boolean;
+	filtersToggler?: any;
 	children?: React.ReactNode;
 	alignment: "main" | "row" | "column" | "grid";
 	hasPadding?: boolean;
@@ -19,7 +22,7 @@ interface SectionHeaderProps {
 
 function Section(props: Props) {
 	function handleClassNames(): string[] {
-		let classNames: string[] = [props.alignment];
+		let classNames: string[] = ["section-body", props.alignment];
 
 		if (props.hasPadding) classNames.push('has-padding');
 		if (props.centerContent) classNames.push('center-content');
@@ -30,7 +33,10 @@ function Section(props: Props) {
 	}
 
 	return (
-		<section className={handleClassNames().join(" ")}>{props.children}</section>
+		<section>
+			{props.title ? <SectionHeader title={props.title} withFilters={props.withFilters} filtersToggler={props.filtersToggler} /> : undefined}
+			<div className={handleClassNames().join(" ")}>{props.children}</div>
+		</section>
 	);
 }
 
