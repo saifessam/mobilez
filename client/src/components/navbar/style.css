@@ -20,6 +20,10 @@ nav.transform-right {
   translate: calc(25vw + var(--spacing));
 }
 
+nav button {
+  padding: 0;
+}
+
 nav a span {
   position: absolute;
   top: 50%;

@@ -28,6 +28,7 @@ function Menu() {
 					<li><Link to={'/'} className={pathname === "/" ? "active" : undefined}>Home <Icons.HomeIcon /></Link></li>
 					<li><Link to={authToken ? `/users/profile/${authToken.id}` : '/users/authorize'} className={pathname?.split('/')[1] === "users" ? "active" : undefined}>Profile <Icons.AccountIcon /></Link></li>
 					<li><Link to={'/devices'} className={pathname?.split('/')[1] === "devices" ? "active" : undefined}>Devices <Icons.ProductsIcon /></Link></li>
+					<li><Link to={'/announcements'} className={pathname?.split('/')[1] === "announcements" ? "active" : undefined}>Announcements <Icons.MessageIcon /></Link></li>
 					{authToken ? <li><Link to={'/cart'} className={pathname?.split('/')[1] === "cart" ? "active" : undefined}>Cart <Icons.CartIcon /></Link></li> : undefined}
 				</ul>
 				<ul>

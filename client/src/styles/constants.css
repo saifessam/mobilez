@@ -10,7 +10,7 @@
   --accent-color-transparent: #1d41ff85;
   --fail-color: #d90429;
   --success-color: #0ead69;
-  --transparent-overlay: linear-gradient(0deg, #00000080, #00000080);
+  --transparent-overlay: #000000bb;
   --gradient-shade: linear-gradient(180deg, #00000000 0%, #000000 100%);
   --shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 

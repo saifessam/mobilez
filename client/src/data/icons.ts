@@ -16,6 +16,7 @@ import { ReactComponent as HomeIcon } from './../assets/svgs/icons/home.svg';
 import { ReactComponent as HeadphoneIcon } from './../assets/svgs/icons/headphone.svg';
 import { ReactComponent as ServicesIcon } from './../assets/svgs/icons/services.svg';
 import { ReactComponent as MapIcon } from './../assets/svgs/icons/map.svg';
+import { ReactComponent as MaximizeIcon } from './../assets/svgs/icons/maximize.svg';
 import { ReactComponent as NotificationIcon } from './../assets/svgs/icons/notification.svg';
 import { ReactComponent as ProductsIcon } from './../assets/svgs/icons/products.svg';
 import { ReactComponent as PlusIcon } from './../assets/svgs/icons/plus.svg';
@@ -49,6 +50,7 @@ const Icons = {
 	HomeIcon,
 	ServicesIcon,
 	MapIcon,
+	MaximizeIcon,
 	NotificationIcon,
 	ProductsIcon,
 	SearchIcon,

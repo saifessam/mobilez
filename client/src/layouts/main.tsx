@@ -16,6 +16,7 @@ import DashboardOrdersPage from './../pages/dashboard/orders';
 import DashboardAnnouncementsPage from './../pages/dashboard/announcements';
 import DashboardUsersPage from './../pages/dashboard/users';
 import useAuthToken from "../hooks/useAuthToken";
+import AnnouncementsPage from "../pages/announcements";
 
 function MainLayout() {
 	const authToken = useAuthToken();
@@ -31,6 +32,10 @@ function MainLayout() {
 					<Route index element={<HomePage />} />
 					<Route path='devices'>
 						<Route index element={<DevicesPage />} />
+						<Route path=':id' element={<></>} />
+					</Route>
+					<Route path='announcements'>
+						<Route index element={<AnnouncementsPage />} />
 						<Route path=':id' element={<></>} />
 					</Route>
 					<Route path={authToken ? 'cart' : undefined}>
