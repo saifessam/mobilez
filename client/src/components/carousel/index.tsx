@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import Icons from './../../data/icons';
+import { ReactComponent as ArrowLeftIcon } from './../../assets/svgs/icons/arrow-left.svg';
+import { ReactComponent as ArrowRightIcon } from './../../assets/svgs/icons/arrow-right.svg';
 import Button from './../button';
 import './style.css';
 
@@ -28,9 +29,9 @@ function Carousel(props: Props) {
 
 	return (
 		<div className='carousel'>
-			<Button type="button" icon={<Icons.ArrowLeftIcon />} action={prev} secondary small />
+			<Button type="button" icon={<ArrowLeftIcon />} action={prev} secondary small />
 			{props.slides![currentIndex]}
-			<Button type="button" icon={<Icons.ArrowRightIcon />} action={next} secondary small />
+			<Button type="button" icon={<ArrowRightIcon />} action={next} secondary small />
 		</div>
 	);
 }

@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
-import Icons from '../../../data/icons';
 import handleChange from '../../../utilities/handle-change';
+import { ReactComponent as TickCircleIcon } from './../../../assets/svgs/icons/tick-circle.svg';
 import './style.css';
 
 interface Props {
@@ -16,7 +16,7 @@ function EmailInput(props: Props) {
 		<div className="input-container">
 			<div className="input-container-label">
 				E-mail
-				{isValid ? <Icons.TickCircleIcon /> : undefined}
+				{isValid ? <TickCircleIcon /> : undefined}
 				{error !== "" ? <span className="input-container-label-error">{error}</span> : undefined}
 			</div>
 			<div className="input-container-field">

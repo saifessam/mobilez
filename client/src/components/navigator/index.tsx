@@ -1,6 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
+import { ReactComponent as MessageIcon } from './../../assets/svgs/icons/message.svg';
+import { ReactComponent as OrdersIcon } from './../../assets/svgs/icons/orders.svg';
+import { ReactComponent as ProductsIcon } from './../../assets/svgs/icons/products.svg';
+import { ReactComponent as UsersIcon } from './../../assets/svgs/icons/users.svg';
 import Button from './../../components/button';
-import Icons from './../../data/icons';
 import './style.css';
 
 function Navigator() {
@@ -11,22 +14,22 @@ function Navigator() {
 			<ul>
 				<li>
 					<Link to={'/dashboard/devices'}>
-						<Button type='button' icon={<Icons.ProductsIcon />} primary={pathname === "/dashboard/devices" ? true : undefined} />
+						<Button type='button' icon={<ProductsIcon />} primary={pathname === "/dashboard/devices" ? true : undefined} />
 					</Link>
 				</li>
 				<li>
 					<Link to={'/dashboard/announcements'}>
-						<Button type='button' icon={<Icons.MessageIcon />} primary={pathname === "/dashboard/announcements" ? true : undefined} />
+						<Button type='button' icon={<MessageIcon />} primary={pathname === "/dashboard/announcements" ? true : undefined} />
 					</Link>
 				</li>
 				<li>
 					<Link to={'/dashboard/orders'}>
-						<Button type='button' icon={<Icons.OrdersIcon />} primary={pathname === "/dashboard/orders" ? true : undefined} />
+						<Button type='button' icon={<OrdersIcon />} primary={pathname === "/dashboard/orders" ? true : undefined} />
 					</Link>
 				</li>
 				<li>
 					<Link to={'/dashboard/users'}>
-						<Button type='button' icon={<Icons.UsersIcon />} primary={pathname === "/dashboard/users" ? true : undefined} />
+						<Button type='button' icon={<UsersIcon />} primary={pathname === "/dashboard/users" ? true : undefined} />
 					</Link>
 				</li>
 			</ul>

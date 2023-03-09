@@ -1,4 +1,4 @@
-import Icons from './../../data/icons';
+import { ReactComponent as FiltersIcon } from './../../assets/svgs/icons/filters.svg';
 import Button from './../button';
 import './style.css';
 
@@ -44,7 +44,7 @@ export function SectionHeader(props: SectionHeaderProps) {
 	return (
 		<div className="section-header">
 			<h3>{props.title}</h3>
-			{props.withFilters && <Button type="button" icon={<Icons.FiltersIcon />} label={"FIlters"} action={() => props.filtersToggler((prev: any) => !prev)} primary small />}
+			{props.withFilters && <Button type="button" icon={<FiltersIcon />} label={"FIlters"} action={() => props.filtersToggler((prev: any) => !prev)} primary small />}
 		</div>
 	);
 }

@@ -1,7 +1,9 @@
 import { ChangeEvent, useState } from 'react';
 import handleChange from '../../../utilities/handle-change';
+import { ReactComponent as EyeSlashIcon } from './../../../assets/svgs/icons/eye-slash.svg';
+import { ReactComponent as EyeIcon } from './../../../assets/svgs/icons/eye.svg';
+import { ReactComponent as TickCircleIcon } from './../../../assets/svgs/icons/tick-circle.svg';
 import Button from './../../../components/button';
-import Icons from './../../../data/icons';
 import './style.css';
 
 interface Props {
@@ -18,12 +20,12 @@ function PasswordInput(props: Props) {
 		<div className="input-container">
 			<label className="input-container-label">
 				Password
-				{isValid ? <Icons.TickCircleIcon /> : undefined}
+				{isValid ? <TickCircleIcon /> : undefined}
 				{error !== "" ? <span className="input-container-label-error">{error}</span> : undefined}
 			</label>
 			<div className="input-container-field password-input">
 				<input type={visible ? "text" : "password"} name="password" placeholder="••••••••••••" onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange({ e, expression, error: "Invalid password", setError, setIsValid, setter: props.setter })} />
-				<Button type='button' icon={visible ? <Icons.EyeSlashIcon /> : <Icons.EyeIcon />} action={() => setVisible((current) => !current)} />
+				<Button type='button' icon={visible ? <EyeSlashIcon /> : <EyeIcon />} action={() => setVisible((current) => !current)} />
 			</div>
 		</div>
 	);

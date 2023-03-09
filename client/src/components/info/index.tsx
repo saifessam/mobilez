@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Icons from '../../data/icons';
 import useAuthToken from '../../hooks/useAuthToken';
 import DeviceData from '../../types/device-data';
 import Message from '../../types/message';
@@ -7,6 +6,7 @@ import OrderType from '../../types/order-data';
 import currencyFormat from '../../utilities/currency-format';
 import Button from '../button';
 import NumberInput from '../inputs/number';
+import { ReactComponent as CartIcon } from './../../assets/svgs/icons/cart.svg';
 import './style.css';
 
 interface Props {
@@ -62,7 +62,7 @@ function Info(props: Props) {
 				</div>
 				<div className="footer">
 					<NumberInput label="Quantity" name="quantity" setter={setOrderData} />
-					<Button type="button" label={'Add to cart'} icon={<Icons.CartIcon />} disabled={props.data.stock === 0} action={addtoCart} primary small />
+					<Button type="button" label={'Add to cart'} icon={<CartIcon />} disabled={props.data.stock === 0} action={addtoCart} primary small />
 				</div>
 			</div>
 		</div>

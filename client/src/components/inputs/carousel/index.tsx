@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import { ReactComponent as ArrowLeftIcon } from './../../../assets/svgs/icons/arrow-left.svg';
+import { ReactComponent as ArrowRightIcon } from './../../../assets/svgs/icons/arrow-right.svg';
 import Button from './../../../components/button';
-import Icons from './../../../data/icons';
 import './style.css';
 
 interface Props {
@@ -41,9 +42,9 @@ function CarouselInput(props: Props) {
 		<div className="input-container">
 			<label className="input-container-label">{label}</label>
 			<div className="input-container-field carousel-input">
-				<Button type="button" icon={<Icons.ArrowLeftIcon />} action={prev} />
+				<Button type="button" icon={<ArrowLeftIcon />} action={prev} />
 				<input type="text" value={value ?? "NULL"} readOnly />
-				<Button type="button" icon={<Icons.ArrowRightIcon />} action={next} />
+				<Button type="button" icon={<ArrowRightIcon />} action={next} />
 			</div>
 		</div>
 	);

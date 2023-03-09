@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
-import Icons from '../../../data/icons';
 import handleChange from '../../../utilities/handle-change';
+import { ReactComponent as TickCircleIcon } from './../../../assets/svgs/icons/tick-circle.svg';
 import './style.css';
 
 interface Props {
@@ -17,7 +17,7 @@ function PhoneInput(props: Props) {
 		<div className="input-container">
 			<label className="input-container-label">
 				Phone number
-				{isValid ? <Icons.TickCircleIcon /> : undefined}
+				{isValid ? <TickCircleIcon /> : undefined}
 				{error !== "" ? <span className="input-container-label-error">{error}</span> : undefined}
 			</label>
 			<div className="input-container-field"> <input type="text" name="phone" placeholder="01XXXXXXXXX" onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange({ e, expression, error: "Invalid phone number", setError, setIsValid, setter })} /></div>

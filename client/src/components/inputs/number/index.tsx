@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import currencyFormat from '../../../utilities/currency-format';
+import { ReactComponent as MinusIcon } from './../../../assets/svgs/icons/minus.svg';
+import { ReactComponent as PlusIcon } from './../../../assets/svgs/icons/plus.svg';
 import Button from './../../../components/button';
-import Icons from './../../../data/icons';
 import './style.css';
 
 interface Props {
@@ -39,9 +40,9 @@ function NumberInput(props: Props) {
 				</div>
 			</label>
 			<div className="input-container-field number-input">
-				<Button type="button" icon={<Icons.MinusIcon />} action={decrease} />
+				<Button type="button" icon={<MinusIcon />} action={decrease} />
 				<input type="text" value={isCurrency ? currencyFormat(value) : value} readOnly />
-				<Button type="button" icon={<Icons.PlusIcon />} action={increase} />
+				<Button type="button" icon={<PlusIcon />} action={increase} />
 			</div>
 		</div>
 	);
