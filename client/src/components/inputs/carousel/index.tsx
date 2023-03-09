@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Button from './../../../components/button';
 import Icons from './../../../data/icons';
 import './style.css';

@@ -1,8 +1,8 @@
-import { useState, ChangeEvent } from 'react';
-import Icons from './../../../data/icons';
-import Button from './../../../components/button';
-import './style.css';
+import { ChangeEvent, useState } from 'react';
 import handleChange from '../../../utilities/handle-change';
+import Button from './../../../components/button';
+import Icons from './../../../data/icons';
+import './style.css';
 
 interface Props {
 	setter: any;

@@ -1,5 +1,5 @@
 import jwtDecode from 'jwt-decode';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookies } from "react-cookie";
 import AuthToken from '../types/auth-token';
 

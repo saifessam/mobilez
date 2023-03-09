@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Button from './../button';
 import Icons from './../../data/icons';
+import Button from './../button';
 import './style.css';
 
 interface Props {

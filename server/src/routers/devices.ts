@@ -1,9 +1,9 @@
 import { Router } from 'express';
+import create from '../functions/devices/create';
 import readAll from '../functions/devices/read-all';
 import readOne from '../functions/devices/read-one';
-import create from '../functions/devices/create';
-import update from '../functions/devices/update';
 import remove from '../functions/devices/remove';
+import update from '../functions/devices/update';
 import authenticate from '../middlewares/authenticate';
 
 const devicesRouter = Router();

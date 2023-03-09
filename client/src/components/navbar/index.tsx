@@ -1,8 +1,8 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import searchSlice from './../../context/slices/search';
-import menuSlice from './../../context/slices/menu';
 import Button from '../button';
+import menuSlice from './../../context/slices/menu';
+import searchSlice from './../../context/slices/search';
 import Icons from './../../data/icons';
 import './style.css';
 

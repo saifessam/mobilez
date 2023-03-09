@@ -1,8 +1,8 @@
-import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Icons from './../../data/icons';
-import Button from '../button';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuthToken from '../../hooks/useAuthToken';
+import Button from '../button';
+import Icons from './../../data/icons';
 import './style.css';
 
 function Menu() {

@@ -1,9 +1,9 @@
 import { model, Schema } from 'mongoose';
 
-const Announcement = model("Announcement", new Schema({
+const schema = new Schema({
 	title: { type: String, required: true },
 	content: { type: String, required: true },
 	image: { type: String, required: true },
-}, { timestamps: true, versionKey: false }));
+}, { timestamps: true, versionKey: false });
 
-export default Announcement;
+export default model("Announcement", schema);

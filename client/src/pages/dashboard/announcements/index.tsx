@@ -1,4 +1,4 @@
-import { useState, SyntheticEvent } from "react";
+import { SyntheticEvent, useState } from "react";
 import Form from "../../../components/form";
 import FileInput from "../../../components/inputs/file";
 import ParagraphInput from "../../../components/inputs/paragraph";

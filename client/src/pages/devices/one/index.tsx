@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import Info from '../../../components/info';
 import Loading from '../../../components/loading';
 import DeviceData from '../../../types/device-data';
-import Info from '../../../components/info';
 
 function DevicePage() {
 	const { id } = useParams();

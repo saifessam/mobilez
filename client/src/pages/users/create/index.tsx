@@ -1,13 +1,13 @@
-import { useState, SyntheticEvent } from "react";
-import Section from "../../../components/section";
-import Form from "../../../components/form";
-import TextInput from "../../../components/inputs/text";
-import PasswordInput from "../../../components/inputs/password";
-import EmailInput from "../../../components/inputs/email";
-import PhoneInput from "../../../components/inputs/phone";
+import { SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import UserData from "../../../types/user-data";
+import Form from "../../../components/form";
+import EmailInput from "../../../components/inputs/email";
+import PasswordInput from "../../../components/inputs/password";
+import PhoneInput from "../../../components/inputs/phone";
+import TextInput from "../../../components/inputs/text";
+import Section from "../../../components/section";
 import Message from "../../../types/message";
+import UserData from "../../../types/user-data";
 
 function UserCreationPage() {
 	const [data, setData] = useState<UserData>({ name: null, email: null, phone: null, password: null });

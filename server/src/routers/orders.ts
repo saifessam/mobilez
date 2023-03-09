@@ -1,9 +1,9 @@
 import { Router } from 'express';
+import create from '../functions/orders/create';
 import readAll from '../functions/orders/read-all';
 import readOne from '../functions/orders/read-one';
-import create from '../functions/orders/create';
-import update from '../functions/orders/update';
 import remove from '../functions/orders/remove';
+import update from '../functions/orders/update';
 
 const ordersRouter = Router();
 

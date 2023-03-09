@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import Icons from '../../../data/icons';
 import handleChange from '../../../utilities/handle-change';
 import './style.css';

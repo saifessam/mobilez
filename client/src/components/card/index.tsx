@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import currencyFormat from '../../utilities/currency-format';
 import DeviceData from '../../types/device-data';
+import currencyFormat from '../../utilities/currency-format';
 import './style.css';
 
 interface Props {

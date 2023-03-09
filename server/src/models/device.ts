@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-const Device = model("Device", new Schema({
+const schmea = new Schema({
 	type: { type: String, required: true },
 	brand: { type: String, required: true },
 	model: { type: String, required: true },
@@ -12,6 +12,6 @@ const Device = model("Device", new Schema({
 	condition: { type: String, required: true },
 	sales: { type: Number, required: true },
 	stock: { type: Number, required: true },
-}, { timestamps: true, versionKey: false }));
+}, { timestamps: true, versionKey: false });
 
-export default Device;
+export default model("Device", schmea);

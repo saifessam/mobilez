@@ -1,14 +1,14 @@
-import express, { Application } from 'express';
-import mongoose from 'mongoose';
-import * as dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import devicesRouter from './routers/devices';
-import usersRouter from './routers/users';
-import announcementsRouter from './routers/announcements';
-import ordersRouter from './routers/orders';
+import * as dotenv from 'dotenv';
+import express, { Application } from 'express';
+import mongoose from 'mongoose';
 import { databaseConnect, serverConnect } from './modules/connections';
+import announcementsRouter from './routers/announcements';
+import devicesRouter from './routers/devices';
+import ordersRouter from './routers/orders';
+import usersRouter from './routers/users';
 
 // Initializing express
 const app: Application = express();

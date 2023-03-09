@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import readAll from '../functions/users/read-all';
-import create from '../functions/users/create';
-import update from '../functions/users/update';
-import remove from '../functions/users/remove';
 import authorize from '../functions/users/authorize';
+import create from '../functions/users/create';
 import deauthorize from '../functions/users/deauthorize';
+import readAll from '../functions/users/read-all';
 import readOne from '../functions/users/read-one';
+import remove from '../functions/users/remove';
+import update from '../functions/users/update';
 
 const usersRouter = Router();
 

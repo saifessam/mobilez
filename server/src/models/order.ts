@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-const Order = model("Order", new Schema({
+const schema = new Schema({
 	receiver: { type: Schema.Types.ObjectId, ref: 'User' },
 	items: [{
 		device: { type: Schema.Types.ObjectId, ref: 'Device' },
@@ -8,6 +8,6 @@ const Order = model("Order", new Schema({
 	}],
 	address: { type: String },
 	status: { type: String, required: true },
-}, { timestamps: true, versionKey: false }));
+}, { timestamps: true, versionKey: false });
 
-export default Order;
+export default model("Order", schema);

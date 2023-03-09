@@ -1,9 +1,9 @@
-import { useState, SyntheticEvent } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Section from '../../../components/section';
 import Form from '../../../components/form';
-import PasswordInput from '../../../components/inputs/password';
 import EmailInput from '../../../components/inputs/email';
+import PasswordInput from '../../../components/inputs/password';
+import Section from '../../../components/section';
 import AuthorizationData from '../../../types/authorization-data';
 import Message from '../../../types/message';
 

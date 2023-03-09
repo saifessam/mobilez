@@ -1,23 +1,23 @@
 import { Route, Routes } from "react-router-dom";
-import Search from "../components/search";
+import Footer from "../components/footer";
+import Main from "../components/main";
 import Menu from "../components/menu";
 import Navbar from "../components/navbar";
-import Main from "../components/main";
-import Footer from "../components/footer";
-import ErrorPage from './../pages/error';
-import HomePage from './../pages/home';
+import Search from "../components/search";
+import useAuthToken from "../hooks/useAuthToken";
+import AnnouncementsPage from "../pages/announcements";
 import DevicesPage from '../pages/devices/all';
 import DevicePage from "../pages/devices/one";
-import AnnouncementsPage from "../pages/announcements";
-import CartPage from './../pages/cart';
-import UserCreationPage from '../pages/users/create';
 import UserAuthorizationPage from '../pages/users/authorize';
-import ProfilePage from './../pages/users/profile';
+import UserCreationPage from '../pages/users/create';
+import CartPage from './../pages/cart';
+import DashboardAnnouncementsPage from './../pages/dashboard/announcements';
 import DashboardDevicesPage from './../pages/dashboard/devices';
 import DashboardOrdersPage from './../pages/dashboard/orders';
-import DashboardAnnouncementsPage from './../pages/dashboard/announcements';
 import DashboardUsersPage from './../pages/dashboard/users';
-import useAuthToken from "../hooks/useAuthToken";
+import ErrorPage from './../pages/error';
+import HomePage from './../pages/home';
+import ProfilePage from './../pages/users/profile';
 
 function MainLayout() {
 	const authToken = useAuthToken();

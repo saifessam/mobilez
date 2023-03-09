@@ -1,9 +1,9 @@
 import { Router } from 'express';
+import create from '../functions/announcements/create';
 import readAll from '../functions/announcements/read-all';
 import readOne from '../functions/announcements/read-one';
-import create from '../functions/announcements/create';
-import update from '../functions/announcements/update';
 import remove from '../functions/announcements/remove';
+import update from '../functions/announcements/update';
 import authenticate from '../middlewares/authenticate';
 
 const announcementsRouter = Router();

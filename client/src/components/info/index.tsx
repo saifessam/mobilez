@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Icons from '../../data/icons';
 import useAuthToken from '../../hooks/useAuthToken';
 import DeviceData from '../../types/device-data';

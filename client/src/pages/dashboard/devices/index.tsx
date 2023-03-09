@@ -1,16 +1,16 @@
-import { useState, SyntheticEvent } from "react";
-import Navigator from "./../../../components/navigator";
-import Section from "./../../../components/section";
-import Form from "./../../../components/form";
-import CarouselInput from "./../../../components/inputs/carousel";
-import TextInput from "./../../../components/inputs/text";
-import FileInput from "./../../../components/inputs/file";
-import DevicesTypes from "./../../../data/devices-types";
-import DevicesConditions from "./../../../data/devices-conditions";
-import { DevicesRAM, DevicesROM } from "./../../../data/devices-capacity";
-import NumberInput from "./../../../components/inputs/number";
+import { SyntheticEvent, useState } from "react";
 import DeviceData from "../../../types/device-data";
 import Message from "../../../types/message";
+import Form from "./../../../components/form";
+import CarouselInput from "./../../../components/inputs/carousel";
+import FileInput from "./../../../components/inputs/file";
+import NumberInput from "./../../../components/inputs/number";
+import TextInput from "./../../../components/inputs/text";
+import Navigator from "./../../../components/navigator";
+import Section from "./../../../components/section";
+import { DevicesRAM, DevicesROM } from "./../../../data/devices-capacity";
+import DevicesConditions from "./../../../data/devices-conditions";
+import DevicesTypes from "./../../../data/devices-types";
 
 function DashboardDevicesPage() {
 	const [data, setData] = useState<DeviceData>();

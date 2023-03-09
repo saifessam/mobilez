@@ -1,5 +1,5 @@
-import { Mongoose } from 'mongoose';
 import { Application } from 'express';
+import { Mongoose } from 'mongoose';
 
 export async function databaseConnect(database: Mongoose) {
 	try {

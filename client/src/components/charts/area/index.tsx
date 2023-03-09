@@ -1,7 +1,7 @@
-import Selector from './../../../components/selector';
-import DevicesTypes from './../../../data/devices-types';
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Line } from "react-chartjs-2";
+import Selector from './../../../components/selector';
+import DevicesTypes from './../../../data/devices-types';
 import './style.css';
 
 ChartJS.register(...registerables);

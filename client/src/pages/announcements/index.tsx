@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import Loading from '../../components/loading';
-import AnnouncementData from '../../types/announcements-data';
-import Section from "../../components/section";
+import { useEffect, useState } from 'react';
 import Annoncement from '../../components/announcement';
+import Loading from '../../components/loading';
+import Section from "../../components/section";
+import AnnouncementData from '../../types/announcements-data';
 
 function AnnouncementsPage() {
 	const [announcements, setAnnouncements] = useState<AnnouncementData[]>();
