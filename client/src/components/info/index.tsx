@@ -5,7 +5,6 @@ import Message from '../../types/message';
 import OrderType from '../../types/order-data';
 import currencyFormat from '../../utilities/currency-format';
 import Button from '../button';
-import { ReactComponent as CartIcon } from './../../assets/svgs/icons/cart.svg';
 import './style.css';
 
 interface Props {

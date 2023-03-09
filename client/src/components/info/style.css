@@ -18,8 +18,13 @@
   align-items: center;
 }
 
-.info .title span:nth-child(1) {
+.info .title span {
+  width: 400px;
   font-size: var(--large-font);
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .info .image {
