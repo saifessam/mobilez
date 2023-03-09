@@ -6,7 +6,7 @@ const Order = model("Order", new Schema({
 		device: { type: Schema.Types.ObjectId, ref: 'Device' },
 		quantity: { type: Number, default: 1, required: true },
 	}],
-	address: { type: String, required: true },
+	address: { type: String },
 	status: { type: String, required: true },
 }, { timestamps: true, versionKey: false }));
 

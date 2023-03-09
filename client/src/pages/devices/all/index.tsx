@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import Card from '../../components/card';
-import Loading from '../../components/loading';
-import DeviceData from '../../types/device-data';
-import Section from "./../../components/section";
+import Card from '../../../components/card';
+import Loading from '../../../components/loading';
+import DeviceData from '../../../types/device-data';
+import Section from "../../../components/section";
 
 function DevicesPage() {
 	const [devices, setDevices] = useState<DeviceData[]>();

@@ -1,16 +1,16 @@
 declare type DeviceData = {
-	_id: string | null;
-	type: string | null;
-	condition: string | null;
-	brand: string | null;
-	model: string | null;
-	color: string | null;
-	image: string | null;
-	ram: string | null;
-	rom: string | null;
-	price: number | null;
-	sales: number | null;
-	stock: number | null;
+	_id?: string;
+	type: string;
+	condition: string;
+	brand: string;
+	model: string;
+	color: string;
+	image: string;
+	ram: string;
+	rom: string;
+	price: number;
+	sales: number;
+	stock: number;
 };
 
 export default DeviceData;

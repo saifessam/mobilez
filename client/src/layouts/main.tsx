@@ -6,7 +6,9 @@ import Main from "../components/main";
 import Footer from "../components/footer";
 import ErrorPage from './../pages/error';
 import HomePage from './../pages/home';
-import DevicesPage from './../pages/devices';
+import DevicesPage from '../pages/devices/all';
+import DevicePage from "../pages/devices/one";
+import AnnouncementsPage from "../pages/announcements";
 import CartPage from './../pages/cart';
 import UserCreationPage from '../pages/users/create';
 import UserAuthorizationPage from '../pages/users/authorize';
@@ -16,7 +18,6 @@ import DashboardOrdersPage from './../pages/dashboard/orders';
 import DashboardAnnouncementsPage from './../pages/dashboard/announcements';
 import DashboardUsersPage from './../pages/dashboard/users';
 import useAuthToken from "../hooks/useAuthToken";
-import AnnouncementsPage from "../pages/announcements";
 
 function MainLayout() {
 	const authToken = useAuthToken();
@@ -32,7 +33,7 @@ function MainLayout() {
 					<Route index element={<HomePage />} />
 					<Route path='devices'>
 						<Route index element={<DevicesPage />} />
-						<Route path=':id' element={<></>} />
+						<Route path=':id' element={<DevicePage />} />
 					</Route>
 					<Route path='announcements'>
 						<Route index element={<AnnouncementsPage />} />

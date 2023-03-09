@@ -13,8 +13,8 @@ interface Props {
 
 function NumberInput(props: Props) {
 	const { label, name, setter, isCurrency } = props;
-	const [multiply, setMultiply] = useState<number>(10);
-	const [value, setValue] = useState<number>(0);
+	const [multiply, setMultiply] = useState<number>(1);
+	const [value, setValue] = useState<number>(1);
 
 	useEffect(() => setter((prev: any) => ({ ...prev, [name]: value })), [value]);
 
