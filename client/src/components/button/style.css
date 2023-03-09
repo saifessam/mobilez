@@ -25,16 +25,16 @@ button.primary {
 }
 
 button.primary svg path {
-  fill: var(--background-primary);
+  fill: var(--background-secondary);
 }
 
 button.primary span {
-  color: var(--background-primary);
+  color: var(--background-secondary);
 }
 
 /* secondary button */
 button.secondary {
-  background-color: var(--background-primary);
+  background-color: var(--background-secondary);
 }
 
 button.secondary span {
