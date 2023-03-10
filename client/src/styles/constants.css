@@ -12,7 +12,6 @@
   --success-color: #0ead69;
   --transparent-overlay: #000000bb;
   --gradient-shade: linear-gradient(180deg, #00000000 0%, #000000 100%);
-  --shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 
   /*fonts*/
   --extra-small-font: clamp(8px, 10px, 12px);

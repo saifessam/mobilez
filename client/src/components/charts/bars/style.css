@@ -8,7 +8,6 @@
   padding: var(--spacing);
   background-color: var(--background-secondary);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
 }
 
 .bars-chart .bars-chart-header {

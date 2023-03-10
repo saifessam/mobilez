@@ -3,7 +3,7 @@
   top: var(--spacing);
   padding: var(--half-spacing);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+
   background-color: var(--background-secondary);
 }
 

@@ -6,7 +6,6 @@
   padding: var(--half-spacing);
   background-color: var(--background-secondary);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
 }
 
 .card .card-image {

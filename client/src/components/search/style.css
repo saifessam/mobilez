@@ -13,7 +13,7 @@
   padding: var(--spacing);
   background-color: var(--background-secondary);
   z-index: 5;
-  box-shadow: var(--shadow);
+
   border-radius: var(--border-radius);
 }
 

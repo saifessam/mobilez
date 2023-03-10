@@ -29,6 +29,7 @@
 
 .input-container .input-container-label .input-container-label-selector button {
   padding: 0;
+  background-color: transparent;
 }
 
 .input-container .input-container-label .input-container-label-selector button span {

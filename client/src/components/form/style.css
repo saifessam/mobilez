@@ -6,7 +6,7 @@ form {
   gap: var(--spacing);
   padding: var(--spacing);
   background-color: var(--background-secondary);
-  box-shadow: var(--shadow);
+
   border-radius: var(--border-radius);
 }
 

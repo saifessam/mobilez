@@ -4,7 +4,7 @@
   height: 60vh;
   background-color: var(--background-secondary);
   border-radius: var(--spacing);
-  box-shadow: var(--shadow);
+
   overflow: hidden;
 }
 
