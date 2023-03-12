@@ -7,16 +7,14 @@ footer {
   align-items: center;
   padding: 0 var(--spacing);
   background-color: var(--background-secondary);
-
-  border-radius: var(--border-radius);
 }
 
 footer.transform-left {
-  translate: calc(-25vw - var(--spacing));
+  translate: -25vw;
 }
 
 footer.transform-right {
-  translate: calc(25vw + var(--spacing));
+  translate: 25vw;
 }
 
 footer #copyrights {

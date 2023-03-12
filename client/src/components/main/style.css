@@ -5,12 +5,14 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding: var(--spacing);
+  gap: var(--spacing);
 }
 
 main.transform-left {
-  translate: calc(-25vw - var(--spacing));
+  translate: -25vw;
 }
 
 main.transform-right {
-  translate: calc(25vw + var(--spacing));
+  translate: 25vw;
 }
