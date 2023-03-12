@@ -1,4 +1,4 @@
-.card {
+.device-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -8,39 +8,39 @@
   border-radius: var(--border-radius);
 }
 
-.card .card-image {
+.device-card .device-card-image {
   max-width: 280px;
   aspect-ratio: 1/1;
   overflow: hidden;
 }
 
-.card .card-image img {
+.device-card .device-card-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
 
-.card .card-details {
+.device-card .device-card-details {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-.card .card-details > * {
+.device-card .device-card-details > * {
   max-width: 280px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.card .card-details span:nth-child(1) {
+.device-card .device-card-details span:nth-child(1) {
   margin-bottom: var(--half-spacing);
 }
 
-.card .card-details span:nth-child(2),
-.card .card-details span:nth-child(3) {
+.device-card .device-card-details span:nth-child(2),
+.device-card .device-card-details span:nth-child(3) {
   font-size: var(--small-font);
   color: var(--text-secondary);
 }

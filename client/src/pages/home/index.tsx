@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Annoncement from "../../components/announcement";
-import Card from "../../components/card";
+import DeviceCard from "../../components/cards/device";
 import Carousel from "../../components/carousel";
 import Loading from "../../components/loading";
 import AnnouncementData from "../../types/announcements-data";
@@ -49,7 +49,7 @@ function HomePage() {
 	return (
 		<Section alignment="main" addSpacing>
 			{announcements ? <Carousel slides={announcements.map((annoncement) => <Annoncement data={annoncement} key={annoncement._id} />)} /> : undefined}
-			{devices ? <Section alignment="grid" title="Featured Devices">{devices.map((device) => <Card data={device} key={device._id} />)}</Section> : undefined}
+			{devices ? <Section alignment="grid" title="Featured Devices">{devices.map((device) => <DeviceCard data={device} key={device._id} />)}</Section> : undefined}
 		</Section>
 	);
 }

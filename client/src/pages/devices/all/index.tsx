@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Card from '../../../components/card';
+import DeviceCard from '../../../components/cards/device';
 import Loading from '../../../components/loading';
 import Section from "../../../components/section";
 import DeviceData from '../../../types/device-data';
@@ -28,7 +28,7 @@ function DevicesPage() {
 
 	return (
 		<Section alignment="grid">
-			{devices ? devices.map((device) => <Card data={device} key={device._id} />) : undefined}
+			{devices ? devices.map((device) => <DeviceCard data={device} key={device._id} />) : undefined}
 		</Section>
 	);
 }

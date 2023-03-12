@@ -1,0 +1,4 @@
+.order-card {
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
+}
