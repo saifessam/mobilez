@@ -12,7 +12,6 @@
   gap: var(--spacing);
   padding: var(--spacing);
   background-color: var(--background-secondary);
-  z-index: 5;
 }
 
 .search.active {
