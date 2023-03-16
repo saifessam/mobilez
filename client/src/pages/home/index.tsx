@@ -8,19 +8,19 @@ import DeviceData from "../../types/device-data";
 import Section from "./../../components/section";
 
 function HomePage() {
-	const [loading, setLoading] = useState<boolean>(false);
+	const [loading, setLoading] = useState<boolean>(true);
 	const [announcements, setAnnouncements] = useState<AnnouncementData[]>();
 	const [devices, setDevices] = useState<DeviceData[]>();
 
 	useEffect(() => {
 		async function getData(): Promise<void> {
-			setLoading(true);
 			await getAnnouncements();
 			await getDevices();
-			setLoading(false);
 		}
 
 		getData();
+
+		return () => setLoading(false);
 	}, []);
 
 
@@ -44,14 +44,16 @@ function HomePage() {
 		}
 	}
 
-	if (loading) return <Loading message="Loading..." />;
-
-	return (
-		<Section alignment="main" addSpacing>
-			{announcements ? <Carousel slides={announcements.map((annoncement) => <Annoncement data={annoncement} key={annoncement._id} />)} /> : undefined}
-			{devices ? <Section alignment="grid" title="Featured Devices">{devices.map((device) => <DeviceCard data={device} key={device._id} />)}</Section> : undefined}
-		</Section>
-	);
+	if (loading) {
+		return <Loading message="Loading..." />;
+	} else {
+		return (
+			<Section alignment="main" addSpacing>
+				{announcements ? <Carousel slides={announcements.map((annoncement) => <Annoncement data={annoncement} key={annoncement._id} />)} /> : undefined}
+				{devices ? <Section alignment="grid" title="Featured Devices">{devices.map((device) => <DeviceCard data={device} key={device._id} />)}</Section> : undefined}
+			</Section>
+		);
+	}
 }
 
 export default HomePage;

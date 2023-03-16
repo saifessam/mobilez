@@ -2,5 +2,4 @@
 
 ###### Changes
 
-- Moved `Card` component to `src/components/cards` and renamed it to `DeviceCard`
-- Created `OrderCard` component
+- Updated data fetching approach in `HomePage`, `DevicesPage`, `DevicePage`
