@@ -16,11 +16,10 @@ function HomePage() {
 		async function getData(): Promise<void> {
 			await getAnnouncements();
 			await getDevices();
+			setLoading(false);
 		}
 
 		getData();
-
-		return () => setLoading(false);
 	}, []);
 
 

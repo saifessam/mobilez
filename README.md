@@ -2,4 +2,4 @@
 
 ###### Changes
 
-- Updated data fetching approach in `HomePage`, `DevicesPage`, `DevicePage`
+- Removed `useEffect` clean up function in `HomePage`
