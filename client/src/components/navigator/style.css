@@ -1,9 +1,8 @@
 .navigator {
   position: sticky;
-  top: var(--spacing);
+  top: calc(var(--spacing) + 4rem);
   padding: var(--half-spacing);
   border-radius: var(--border-radius);
-
   background-color: var(--background-secondary);
 }
 

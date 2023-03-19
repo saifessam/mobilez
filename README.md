@@ -2,4 +2,4 @@
 
 ###### Changes
 
-- Removed `useEffect` clean up function in `HomePage`
+- Updated `Navbar` and `Navigator` styles
