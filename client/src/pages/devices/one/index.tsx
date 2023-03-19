@@ -9,6 +9,8 @@ function DevicePage() {
 	const [device, setDevice] = useState<DeviceData>();
 
 	useEffect(() => {
+		const controller: AbortController = new AbortController();
+
 		async function getDevice(): Promise<void> {
 			try {
 				const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default" };
@@ -20,6 +22,8 @@ function DevicePage() {
 		}
 
 		getDevice();
+
+		return () => controller.abort();
 	}, [id]);
 
 

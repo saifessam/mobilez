@@ -13,6 +13,8 @@ function HomePage() {
 	const [devices, setDevices] = useState<DeviceData[]>();
 
 	useEffect(() => {
+		const controller: AbortController = new AbortController();
+
 		async function getData(): Promise<void> {
 			await getAnnouncements();
 			await getDevices();
@@ -20,6 +22,8 @@ function HomePage() {
 		}
 
 		getData();
+
+		return () => controller.abort();
 	}, []);
 
 

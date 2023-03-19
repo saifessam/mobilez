@@ -2,4 +2,4 @@
 
 ###### Changes
 
-- Updated `Navbar` and `Navigator` styles
+- Added `AbortController` for each `useEffect` clean up function in `HomePage`, `DevicesPage`, `DevicePage`

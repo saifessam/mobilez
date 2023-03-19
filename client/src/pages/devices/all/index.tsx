@@ -8,6 +8,8 @@ function DevicesPage() {
 	const [devices, setDevices] = useState<DeviceData[]>();
 
 	useEffect(() => {
+		const controller: AbortController = new AbortController();
+
 		async function getDevices(): Promise<void> {
 			try {
 				const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default" };
@@ -19,6 +21,8 @@ function DevicesPage() {
 		}
 
 		getDevices();
+
+		return () => controller.abort();
 	}, []);
 
 
