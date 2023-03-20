@@ -4,4 +4,4 @@
 
 #### Client
 
-- Updated `Loading` component styling
+- Reseting `Form` submit button label after 3 seconds

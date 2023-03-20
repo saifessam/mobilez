@@ -19,12 +19,13 @@ function Form(props: Props) {
 	const [label, setLabel] = useState<Message>({ succeed: null, response: "Submit" });
 
 	useEffect(() => {
-		if (props.message.succeed !== null && props.message.response !== null) setLabel(props.message);
-	}, [props.message]);
-
-	useEffect(() => {
 		if (props.loading) setLabel({ succeed: null, response: "Loading..." });
 	}, [props.loading]);
+
+	useEffect(() => {
+		if (props.message.succeed !== null && props.message.response !== null) setLabel(props.message);
+		setTimeout(() => setLabel({ succeed: null, response: "Submit" }), 3000);
+	}, [props.message]);
 
 	return (
 		<form method='POST' autoComplete='off' encType={props.encType} onSubmit={(e: SyntheticEvent) => props.onSubmit(e)}>
