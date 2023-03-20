@@ -1,16 +1,11 @@
 .loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--half-spacing);
-  background-color: var(--background-primary);
-  z-index: 500;
 }
 
 .loading span {
