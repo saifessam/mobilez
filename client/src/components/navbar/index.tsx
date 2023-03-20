@@ -1,22 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Button from '../button';
-import { ReactComponent as MenuIcon } from './../../assets/svgs/icons/menu.svg';
-import { ReactComponent as SearchIcon } from './../../assets/svgs/icons/search.svg';
-import menuSlice from './../../context/slices/menu';
-import searchSlice from './../../context/slices/search';
+import useAuthToken from '../../hooks/useAuthToken';
 import './style.css';
 
 function Navbar() {
-	const { isToggled: searchToggle } = useSelector((state: any) => state.search);
-	const { isToggled: menuToggle } = useSelector((state: any) => state.menu);
-	const dispatch = useDispatch();
+	const authToken = useAuthToken();
 
 	return (
-		<nav className={menuToggle ? 'transform-left' : searchToggle ? 'transform-right' : undefined}>
-			<Button type="button" icon={<SearchIcon />} action={() => dispatch(searchSlice.actions.toggle())} />
+		<nav>
 			<Link to={'/'}><span>Mobilez</span></Link>
-			<Button type="button" icon={<MenuIcon />} action={() => dispatch(menuSlice.actions.toggle())} />
+			<ul>
+				<li><Link to={'/search'}>Search</Link></li>
+				<li><Link to={authToken ? `/users/profile/${authToken.id}` : '/users/authorize'}>Account</Link></li>
+				{authToken ? <li><Link to={'/cart'}>Cart</Link></li> : undefined}
+				{authToken && authToken.role === 'ADMIN' ? <li><Link to={'/dashboard/devices'}>Dashboard</Link></li> : undefined}
+			</ul>
 		</nav>
 	);
 }

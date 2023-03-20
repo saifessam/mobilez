@@ -13,23 +13,25 @@ nav {
   z-index: 2;
 }
 
-nav.transform-left {
-  translate: -25vw;
-}
-
-nav.transform-right {
-  translate: 25vw;
-}
-
 nav button {
   padding: 0;
 }
 
 nav a span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
   font-size: var(--large-font);
   color: var(--accent-color);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--spacing);
+}
+
+nav ul li a {
+  font-size: var(--small-font);
+  font-weight: 400;
+  color: var(--text-secondary);
 }

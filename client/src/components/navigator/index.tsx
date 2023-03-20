@@ -18,11 +18,6 @@ function Navigator() {
 					</Link>
 				</li>
 				<li>
-					<Link to={'/dashboard/announcements'}>
-						<Button type='button' icon={<MessageIcon />} primary={pathname === "/dashboard/announcements" ? true : undefined} />
-					</Link>
-				</li>
-				<li>
 					<Link to={'/dashboard/orders'}>
 						<Button type='button' icon={<OrdersIcon />} primary={pathname === "/dashboard/orders" ? true : undefined} />
 					</Link>

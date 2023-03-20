@@ -35,7 +35,6 @@ function DevicesPage() {
 			</Section>
 		);
 	}
-
 }
 
 export default DevicesPage;

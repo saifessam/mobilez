@@ -1,4 +1,41 @@
 .order-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--half-spacing);
+  padding: var(--half-spacing);
   background-color: var(--background-secondary);
   border-radius: var(--border-radius);
+}
+
+.order-card .order-card-image {
+  max-width: 140px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.order-card .order-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.order-card .order-card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.order-card .order-card-details span:nth-child(1) {
+  font-size: var(--large-font);
+  margin-bottom: var(--half-spacing);
+}
+
+.order-card .order-card-details span:not(span:nth-child(1)) {
+  font-size: var(--small-font);
+  color: var(--text-secondary);
 }

@@ -1,8 +1,8 @@
-declare type OrderType = {
-	_id?: string | undefined;
-	receiver: string | undefined;
-	items: [{ device: string | undefined; quantity: number; }];
+declare type OrderData = {
+	_id?: string;
+	receiver: string;
+	items: [{ device: string; quantity: number; }];
 	status: "SAVED" | "PENDDING" | "SHIPPED";
 };
 
-export default OrderType;
+export default OrderData;

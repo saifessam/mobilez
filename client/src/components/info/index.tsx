@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import useAuthToken from '../../hooks/useAuthToken';
 import DeviceData from '../../types/device-data';
 import Message from '../../types/message';
-import OrderType from '../../types/order-data';
+import OrderData from '../../types/order-data';
 import currencyFormat from '../../utilities/currency-format';
 import Button from '../button';
 import './style.css';
@@ -13,7 +13,7 @@ interface Props {
 
 function Info(props: Props) {
 	const authToken = useAuthToken();
-	const [orderData, setOrderData] = useState<OrderType>({ receiver: undefined, items: [{ device: props.data._id, quantity: 1 }], status: "SAVED" });
+	const [orderData, setOrderData] = useState<OrderData>({ receiver: "", items: [{ device: props.data._id!, quantity: 1 }], status: "SAVED" });
 	const [loading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<Message>({ succeed: null, response: null });
 
