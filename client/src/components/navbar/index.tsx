@@ -9,10 +9,8 @@ function Navbar() {
 		<nav>
 			<Link to={'/'}><span>Mobilez</span></Link>
 			<ul>
-				<li><Link to={'/search'}>Search</Link></li>
-				<li><Link to={authToken ? `/users/profile/${authToken.id}` : '/users/authorize'}>Account</Link></li>
+				<li><Link to={authToken ? '/users/profile' : '/users/authorize'}>{authToken ? "Profile" : "Join"}</Link></li>
 				{authToken ? <li><Link to={'/cart'}>Cart</Link></li> : undefined}
-				{authToken && authToken.role === 'ADMIN' ? <li><Link to={'/dashboard/devices'}>Dashboard</Link></li> : undefined}
 			</ul>
 		</nav>
 	);

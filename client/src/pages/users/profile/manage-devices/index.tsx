@@ -1,14 +1,13 @@
 import { SyntheticEvent, useState } from "react";
-import DeviceData from "../../../types/device-data";
-import Message from "../../../types/message";
-import DevicesJSON from "./../../../assets/jsons/devices.json";
-import Form from "./../../../components/form";
-import CarouselInput from "./../../../components/inputs/carousel";
-import FileInput from "./../../../components/inputs/file";
-import NumberInput from "./../../../components/inputs/number";
-import TextInput from "./../../../components/inputs/text";
-import Navigator from "./../../../components/navigator";
-import Section from "./../../../components/section";
+import DevicesJSON from "../../../../assets/jsons/devices.json";
+import Form from "../../../../components/form";
+import CarouselInput from "../../../../components/inputs/carousel";
+import FileInput from "../../../../components/inputs/file";
+import NumberInput from "../../../../components/inputs/number";
+import TextInput from "../../../../components/inputs/text";
+import Section from "../../../../components/section";
+import DeviceData from "../../../../types/device-data";
+import Message from "../../../../types/message";
 
 function DashboardDevicesPage() {
 	const [data, setData] = useState<DeviceData>();
@@ -31,8 +30,7 @@ function DashboardDevicesPage() {
 
 	return (
 		<Section alignment="row" addSpacing>
-			<Navigator />
-			<Section alignment="column" addSpacing></Section>
+			<Section alignment="column">Devices</Section>
 			<Form onSubmit={handleSubmit} encType={"multipart/form-data"} title="Add new device" message={message} loading={loading}>
 				<CarouselInput label="Type" name="type" options={DevicesJSON.types} setter={setData} />
 				<CarouselInput label="Condition" name="condition" options={DevicesJSON.conditions} setter={setData} />

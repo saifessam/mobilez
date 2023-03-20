@@ -1,0 +1,36 @@
+aside {
+  min-width: 20%;
+  height: calc(100vh - 8rem - calc(var(--spacing) * 2));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: var(--spacing);
+  padding: var(--spacing);
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
+}
+
+aside ul {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: var(--half-spacing);
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+aside ul li {
+  padding: var(--half-spacing);
+  color: var(--text-secondary);
+  font-weight: 400;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+aside ul li.active {
+  color: var(--text-primary);
+  font-weight: 700;
+}

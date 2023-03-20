@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  gap: var(--half-spacing);
   padding: var(--half-spacing);
   background-color: var(--background-secondary);
   border-radius: var(--border-radius);
