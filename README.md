@@ -4,4 +4,4 @@
 
 #### Client
 
-- Reseting `Form` submit button label after 3 seconds
+- Updated `Section` component styles

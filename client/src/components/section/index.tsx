@@ -1,9 +1,6 @@
 import './style.css';
 
 interface Props {
-	title?: string;
-	withFilters?: boolean;
-	filtersToggler?: any;
 	children?: React.ReactNode;
 	alignment: "main" | "row" | "column" | "grid";
 	hasPadding?: boolean;
@@ -14,7 +11,7 @@ interface Props {
 
 function Section(props: Props) {
 	function handleClassNames(): string[] {
-		let classNames: string[] = [props.alignment];
+		let classNames: string[] = ["section-body", props.alignment];
 
 		if (props.hasPadding) classNames.push('has-padding');
 		if (props.centerContent) classNames.push('center-content');

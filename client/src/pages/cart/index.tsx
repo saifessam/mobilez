@@ -47,7 +47,7 @@ function CartPage() {
 					<Section alignment="column" addSpacing>
 						{orders.map((order) => order.items.map((item) => <OrderCard id={item.device} quntity={item.quantity} key={item.device} />))}
 					</Section>
-					<Section alignment="column" addSpacing title="Cart Checkout"></Section>
+					<Section alignment="column" addSpacing></Section>
 				</Section>
 			);
 		}

@@ -7,17 +7,6 @@ section {
   gap: var(--half-spacing);
 }
 
-section .section-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-section .section-header h3 {
-  font-size: var(--large-font);
-}
-
 section.has-padding {
   padding: var(--spacing);
 }
@@ -65,23 +54,6 @@ section.grid {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: var(--spacing);
-}
-
-/* section.grid > * {
-  width: calc(25% - var(--spacing));
-} */
-
-/* section.grid {
-  display: grid;
-  justify-items: start;
-  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-  gap: var(--spacing);
-} */
-
-section.grid3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   gap: var(--spacing);
 }
 
