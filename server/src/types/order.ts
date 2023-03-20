@@ -1,8 +1,9 @@
-declare type OrderData = {
+declare type OrderType = {
 	_id?: string;
 	receiver: string;
 	items: { device: string; quantity: number; _id?: string; }[];
-	status: "SAVED" | "PENDDING" | "SHIPPED";
+	address: string;
+	status: string;
 };
 
-export default OrderData;
+export default OrderType;

@@ -42,7 +42,7 @@ function DeviceCard(props: Props) {
 				<span>{props.data.ram} RAM - {props.data.rom} ROM</span>
 				<span>{currencyFormat(props.data.price!)}</span>
 			</div>
-			<Button type="button" condition={label.succeed === null ? 'normal' : label.succeed ? 'success' : 'fail'} label={label.response!} disabled={props.data.stock === 0} action={addtoCart} primary />
+			<Button type="button" condition={label.succeed === null ? 'primary' : label.succeed ? 'success' : 'fail'} label={label.response!} disabled={props.data.stock === 0} action={addtoCart} />
 		</div>
 	);
 }

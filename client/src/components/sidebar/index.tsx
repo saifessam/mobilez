@@ -15,6 +15,7 @@ function Sidebar(props: Props) {
 		try {
 			await fetch("http://localhost:4000/users/deauthorize", { method: "GET", cache: "no-store", credentials: "include" });
 			navigate('/', { replace: true });
+			window.location.reload();
 		} catch (error) {
 			console.error("Request error", error);
 		}
@@ -23,14 +24,14 @@ function Sidebar(props: Props) {
 	return (
 		<aside>
 			<ul>
-				<li className={props.state.index === 0 ? "active" : undefined} onClick={() => props.state.setIndex(0)}>Account details</li>
-				<li className={props.state.index === 1 ? "active" : undefined} onClick={() => props.state.setIndex(1)}>Shipping address</li>
-				<li className={props.state.index === 2 ? "active" : undefined} onClick={() => props.state.setIndex(2)}>Placed orders</li>
-				{authToken && authToken.role === 'ADMIN' ? <li className={props.state.index === 3 ? "active" : undefined} onClick={() => props.state.setIndex(3)}>Manage devices</li> : undefined}
-				{authToken && authToken.role === 'ADMIN' ? <li className={props.state.index === 4 ? "active" : undefined} onClick={() => props.state.setIndex(4)}>Manage orders</li> : undefined}
-				{authToken && authToken.role === 'ADMIN' ? <li className={props.state.index === 5 ? "active" : undefined} onClick={() => props.state.setIndex(5)}>Manage users</li> : undefined}
+				<li><Button type="button" condition={props.state.index === 0 ? "primary" : "default"} label="Account details" action={() => props.state.setIndex(0)} /></li>
+				<li><Button type="button" condition={props.state.index === 1 ? "primary" : "default"} label="Shipping address" action={() => props.state.setIndex(1)} /></li>
+				<li><Button type="button" condition={props.state.index === 2 ? "primary" : "default"} label="Placed orders" action={() => props.state.setIndex(2)} /></li>
+				{authToken && authToken.role === 'ADMIN' ? <li><Button type="button" condition={props.state.index === 3 ? "primary" : "default"} label="Manage devices" action={() => props.state.setIndex(3)} /></li> : undefined}
+				{authToken && authToken.role === 'ADMIN' ? <li><Button type="button" condition={props.state.index === 4 ? "primary" : "default"} label="Manage orders" action={() => props.state.setIndex(4)} /></li> : undefined}
+				{authToken && authToken.role === 'ADMIN' ? <li><Button type="button" condition={props.state.index === 5 ? "primary" : "default"} label="Manage users" action={() => props.state.setIndex(5)} /></li> : undefined}
 			</ul>
-			<Button type='button' condition='normal' label='Sign out' action={handleSignOut} primary />
+			<Button type='button' condition='primary' label='Sign out' action={handleSignOut} />
 		</aside>
 	);
 }

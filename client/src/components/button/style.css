@@ -1,55 +1,26 @@
-/* default button */
+@import url('./varieties/default.css');
+@import url('./varieties/disabled.css');
+@import url('./varieties/fail.css');
+@import url('./varieties/primary.css');
+@import url('./varieties/secondary.css');
+@import url('./varieties/success.css');
+
 button {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: var(--half-spacing);
+  border-radius: var(--border-radius);
   cursor: pointer;
-}
-
-button.fail {
-  background-color: var(--fail-color) !important;
-  color: var(--background-secondary) !important;
-}
-
-button.success {
-  background-color: var(--success-color) !important;
-  color: var(--background-secondary) !important;
 }
 
 button span {
   white-space: nowrap;
-  color: var(--accent-color);
   font-size: var(--small-font);
 }
 
-/* primary button */
-button.primary {
-  background-color: var(--accent-color);
-  padding: var(--half-spacing);
-  border-radius: var(--border-radius);
-}
-
-button.primary span {
-  color: var(--background-secondary);
-}
-
-/* secondary button */
-button.secondary {
-  background-color: var(--background-secondary);
-  padding: var(--half-spacing);
-  border-radius: var(--border-radius);
-}
-
-button.secondary span {
-  color: var(--accent-color) !important;
-}
-
-/* disabled button */
-button:disabled {
-  background-color: var(--text-primary-transparent) !important;
-}
-
-button:not(:disabled):hover {
-  border-radius: var(--hover-border-radius);
+button svg {
+  width: var(--medium-font);
+  height: var(--medium-font);
 }

@@ -27,13 +27,16 @@
   gap: calc(var(--half-spacing) / 2);
 }
 
-.input-container .input-container-label .input-container-label-selector button {
+.input-container .input-container-label .input-container-label-selector button.secondary {
   padding: 0;
   background-color: transparent;
 }
 
-.input-container .input-container-label .input-container-label-selector button span {
+.input-container .input-container-label .input-container-label-selector button.default span {
   color: var(--text-secondary);
+}
+
+.input-container .input-container-label .input-container-label-selector button span {
   font-size: var(--extra-small-font);
 }
 
@@ -65,14 +68,4 @@
 
 .input-container .input-container-field textarea {
   resize: none;
-}
-
-.input-container .input-container-field button svg {
-  width: var(--medium-font);
-  height: var(--medium-font);
-  cursor: pointer;
-}
-
-.input-container .input-container-field button svg path {
-  fill: var(--text-secondary);
 }

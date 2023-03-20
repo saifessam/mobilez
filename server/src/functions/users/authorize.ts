@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import User from "../../models/user";
 import { comparePasswords } from "../../modules/passwords";
 import { createToken } from "../../modules/tokens";
+import UserType from "../../types/user";
 
 async function authorize(req: Request, res: Response) {
 	try {
@@ -11,7 +12,7 @@ async function authorize(req: Request, res: Response) {
 			if (emptyValue) return res.status(403).json({ succeed: false, response: `User ${emptyValue[0]} can't be empty` });
 
 			// 2. Checking if user is existed
-			const existingUser = await User.findOne({ email: req.body.email.toString() });
+			const existingUser: UserType | null = await User.findOne({ email: req.body.email.toString() });
 			if (!existingUser) return res.status(403).json({ succeed: false, response: "Wrong credentials" });
 
 			// 3. Validating given password
@@ -19,7 +20,7 @@ async function authorize(req: Request, res: Response) {
 			if (!validPassword) return res.status(403).json({ succeed: false, response: "Wrong credentials" });
 
 			// 4. Generating user authorization token
-			const token: string = createToken(existingUser._id.toString(), existingUser.role);
+			const token: string = createToken(existingUser._id!.toString(), existingUser.role);
 
 			// 5. Setting auth_token cookie
 			return res.status(202).cookie('auth_token', token, { path: '/', maxAge: 1000 * 60 * 60 * 24 * 2, sameSite: false }).json({ succeed: true, response: "User authorized successfully" });

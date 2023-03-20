@@ -10,14 +10,17 @@ import Message from "../../../types/message";
 import UserData from "../../../types/user-data";
 
 function UserCreationPage() {
-	const [data, setData] = useState<UserData>({ name: null, email: null, phone: null, password: null });
+	const [data, setData] = useState<UserData>();
 	const [loading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<Message>({ succeed: null, response: null });
 	const navigate = useNavigate();
 
 	function handleCreation(data: Message) {
 		setMessage(data);
-		if (data.succeed) setTimeout(() => navigate('/', { replace: true }), 2500);
+		if (data.succeed) setTimeout(() => {
+			navigate('/', { replace: true });
+			window.location.reload();
+		}, 2500);
 	}
 
 	async function handleSubmit(e: SyntheticEvent): Promise<void> {

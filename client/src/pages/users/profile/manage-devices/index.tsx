@@ -17,7 +17,6 @@ function DashboardDevicesPage() {
 	async function handleSubmit(e: SyntheticEvent): Promise<void> {
 		e.preventDefault();
 		setLoading(true);
-		console.log(data);
 		try {
 			const options: RequestInit = { method: "POST", body: new Blob([JSON.stringify(data)], { type: 'application/json' }), cache: "no-store", credentials: "include" };
 			const response = await fetch("/devices/create", options);

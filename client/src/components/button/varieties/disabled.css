@@ -1,0 +1,8 @@
+button:disabled {
+  background-color: var(--text-secondary-transparent) !important;
+  cursor: default;
+}
+
+button:not(:disabled):hover {
+  border-radius: var(--hover-border-radius);
+}

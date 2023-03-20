@@ -1,0 +1,11 @@
+button.secondary {
+  background-color: var(--background-secondary);
+}
+
+button.secondary span {
+  color: var(--accent-color);
+}
+
+button.secondary svg path {
+  fill: var(--accent-color);
+}

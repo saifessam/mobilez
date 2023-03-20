@@ -15,7 +15,10 @@ function UserAuthorizationPage() {
 
 	function handleAuthorization(data: Message) {
 		setMessage(data);
-		if (data.succeed) setTimeout(() => navigate('/', { replace: true }), 2500);
+		if (data.succeed) setTimeout(() => {
+			navigate('/', { replace: true });
+			window.location.reload();
+		}, 2500);
 	}
 
 	async function handleSubmit(e: SyntheticEvent): Promise<void> {

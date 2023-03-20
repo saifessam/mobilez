@@ -4,4 +4,11 @@
 
 #### Client
 
-- Updated `Section` component styles
+- Updated `CartPage` fetch functionality
+- Added page refresh after redirection
+
+#### Server
+
+- Added type definitions for each model
+- Updated `orders/create` functionality
+- Added functionality to `orders/remove`

@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import User from "../../models/user";
 import { hashPassword, strongPassword } from "../../modules/passwords";
 import { createToken } from "../../modules/tokens";
+import UserType from "../../types/user";
 
 async function create(req: Request, res: Response) {
 	try {
@@ -11,11 +12,11 @@ async function create(req: Request, res: Response) {
 			if (emptyValue) return res.status(403).json({ succeed: false, response: `User ${emptyValue[0]} can't be empty` });
 
 			// 2. Checking for an existing e-mail
-			const existingEmail = await User.findOne({ email: req.body.email.toString() });
+			const existingEmail: UserType | null = await User.findOne({ email: req.body.email.toString() });
 			if (existingEmail) return res.status(403).json({ succeed: false, response: "A user is already registered with the provided e-mail" });
 
 			// 3. Checking for an existing phone number
-			const existingPhone = await User.findOne({ phone: req.body.phone.toString() });
+			const existingPhone: UserType | null = await User.findOne({ phone: req.body.phone.toString() });
 			if (existingPhone) return res.status(403).json({ succeed: false, response: "A user is already registered with the provided phone number" });
 
 			// 4. Checking if password is strong

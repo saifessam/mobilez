@@ -29,9 +29,9 @@ function Carousel(props: Props) {
 
 	return (
 		<div className='carousel'>
-			<Button type="button" condition='normal' icon={<ArrowLeftIcon />} action={prev} />
+			<Button type="button" condition='primary' icon={<ArrowLeftIcon />} action={prev} />
 			{props.slides![currentIndex]}
-			<Button type="button" condition='normal' icon={<ArrowRightIcon />} action={next} />
+			<Button type="button" condition='primary' icon={<ArrowRightIcon />} action={next} />
 		</div>
 	);
 }

@@ -42,9 +42,9 @@ function CarouselInput(props: Props) {
 		<div className="input-container">
 			<label className="input-container-label">{label}</label>
 			<div className="input-container-field carousel-input">
-				<Button type="button" condition='normal' icon={<ArrowLeftIcon />} action={prev} />
+				<Button type="button" condition="default" icon={<ArrowLeftIcon />} action={prev} />
 				<input type="text" value={value ?? "NULL"} readOnly />
-				<Button type="button" condition='normal' icon={<ArrowRightIcon />} action={next} />
+				<Button type="button" condition="default" icon={<ArrowRightIcon />} action={next} />
 			</div>
 		</div>
 	);

@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import useAuthToken from "../../../hooks/useAuthToken";
 import DeviceData from "../../../types/device-data";
+import Message from "../../../types/message";
 import currencyFormat from "../../../utilities/currency-format";
+import Button from "../../button";
 import './style.css';
 
 interface Props {
-	id: string | undefined;
-	quntity: number | undefined;
+	id: string;
+	quntity: number;
 }
 
 function OrderCard(props: Props) {
 	const [device, setDevice] = useState<DeviceData>();
+	const authToken = useAuthToken();
 
 	useEffect(() => {
 		const controller: AbortController = new AbortController();
@@ -30,20 +33,33 @@ function OrderCard(props: Props) {
 		return () => controller.abort();
 	}, [props.id]);
 
+	async function removeDevice(): Promise<void> {
+		try {
+			const options: RequestInit = { method: "DELETE", headers: { "Content-Type": "application/json" }, body: new Blob([JSON.stringify({ id: props.id, receiver: authToken?.id })]), cache: "default", credentials: "include" };
+			const response = await fetch("/orders/remove", options);
+			await response.json().then((data: Message) => {
+				if (data.succeed) window.location.reload();
+			});
+		} catch (error) {
+			console.error("Request error", error);
+		}
+	}
+
 	if (!device) {
 		return <div className="order-card">Loading...</div>;
 	} else {
 		return (
 			<div className="order-card">
-				<Link to={`/devices/${device._id}`} className="order-card-image">
+				<div className="order-card-image">
 					<img src={require(`./../../../assets/images/${device.image}`)} alt={device.brand!} loading="lazy" />
-				</Link>
+				</div>
 				<div className="order-card-details">
 					<span>{device.color} {device.brand} {device.model}</span>
 					<span>{device.ram} RAM - {device.rom} ROM</span>
 					<span>{currencyFormat(device.price!)}</span>
 					<span>Quntity: {props.quntity}</span>
 				</div>
+				<Button type="button" condition="fail" label="Remove" action={removeDevice} />
 			</div>
 		);
 	}

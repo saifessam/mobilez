@@ -1,0 +1,11 @@
+button.success {
+  background-color: var(--success-color);
+}
+
+button.success span {
+  color: var(--background-secondary);
+}
+
+button.success svg path {
+  fill: var(--background-secondary);
+}

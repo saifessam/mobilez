@@ -12,7 +12,7 @@ const ordersRouter = Router();
 ordersRouter.get('/', readAll);
 ordersRouter.post('/create', create);
 ordersRouter.put('/update', update);
-ordersRouter.delete('/remove', remove);
+ordersRouter.delete('/remove', authenticate, remove);
 ordersRouter.get('/cart/:id', authenticate, readCartItems);
 ordersRouter.get('/:id', readOne);
 

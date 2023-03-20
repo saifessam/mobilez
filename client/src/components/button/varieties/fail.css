@@ -1,0 +1,11 @@
+button.fail {
+  background-color: var(--fail-color);
+}
+
+button.fail span {
+  color: var(--background-secondary);
+}
+
+button.fail svg path {
+  fill: var(--background-secondary);
+}
