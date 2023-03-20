@@ -37,6 +37,7 @@
 }
 
 .device-card .device-card-details span:nth-child(1) {
+  font-weight: 700;
   margin-bottom: var(--half-spacing);
 }
 

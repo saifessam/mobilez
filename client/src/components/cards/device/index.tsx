@@ -29,7 +29,7 @@ function DeviceCard(props: Props) {
 		} catch (error) {
 			console.error("Request error", error);
 		}
-		setTimeout(() => setLabel((prev) => ({ ...prev, response: "Add to cart" })), 2000);
+		setTimeout(() => setLabel({ succeed: null, response: "Add to cart" }), 2000);
 	}
 
 	return (
@@ -42,7 +42,7 @@ function DeviceCard(props: Props) {
 				<span>{props.data.ram} RAM - {props.data.rom} ROM</span>
 				<span>{currencyFormat(props.data.price!)}</span>
 			</div>
-			<Button type="button" label={label.response!} disabled={props.data.stock === 0} action={addtoCart} primary small />
+			<Button type="button" condition={label.succeed === null ? 'normal' : label.succeed ? 'success' : 'fail'} label={label.response!} disabled={props.data.stock === 0} action={addtoCart} primary />
 		</div>
 	);
 }

@@ -1,5 +1,3 @@
-import { ReactComponent as FiltersIcon } from './../../assets/svgs/icons/filters.svg';
-import Button from './../button';
 import './style.css';
 
 interface Props {
@@ -14,15 +12,9 @@ interface Props {
 	fitContent?: boolean;
 }
 
-interface SectionHeaderProps {
-	title?: string;
-	withFilters?: boolean;
-	filtersToggler?: any;
-}
-
 function Section(props: Props) {
 	function handleClassNames(): string[] {
-		let classNames: string[] = ["section-body", props.alignment];
+		let classNames: string[] = [props.alignment];
 
 		if (props.hasPadding) classNames.push('has-padding');
 		if (props.centerContent) classNames.push('center-content');
@@ -33,19 +25,9 @@ function Section(props: Props) {
 	}
 
 	return (
-		<section>
-			{props.title ? <SectionHeader title={props.title} withFilters={props.withFilters} filtersToggler={props.filtersToggler} /> : undefined}
-			<div className={handleClassNames().join(" ")}>{props.children}</div>
+		<section className={handleClassNames().join(" ")}>
+			{props.children}
 		</section>
-	);
-}
-
-export function SectionHeader(props: SectionHeaderProps) {
-	return (
-		<div className="section-header">
-			<h3>{props.title}</h3>
-			{props.withFilters && <Button type="button" icon={<FiltersIcon />} label={"FIlters"} action={() => props.filtersToggler((prev: any) => !prev)} primary small />}
-		</div>
 	);
 }
 

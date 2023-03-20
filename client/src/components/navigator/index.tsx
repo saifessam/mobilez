@@ -14,17 +14,17 @@ function Navigator() {
 			<ul>
 				<li>
 					<Link to={'/dashboard/devices'}>
-						<Button type='button' icon={<ProductsIcon />} primary={pathname === "/dashboard/devices" ? true : undefined} />
+						<Button type='button' condition='normal' icon={<ProductsIcon />} primary={pathname === "/dashboard/devices" ? true : undefined} />
 					</Link>
 				</li>
 				<li>
 					<Link to={'/dashboard/orders'}>
-						<Button type='button' icon={<OrdersIcon />} primary={pathname === "/dashboard/orders" ? true : undefined} />
+						<Button type='button' condition='normal' icon={<OrdersIcon />} primary={pathname === "/dashboard/orders" ? true : undefined} />
 					</Link>
 				</li>
 				<li>
 					<Link to={'/dashboard/users'}>
-						<Button type='button' icon={<UsersIcon />} primary={pathname === "/dashboard/users" ? true : undefined} />
+						<Button type='button' condition='normal' icon={<UsersIcon />} primary={pathname === "/dashboard/users" ? true : undefined} />
 					</Link>
 				</li>
 			</ul>

@@ -25,7 +25,7 @@ function PasswordInput(props: Props) {
 			</label>
 			<div className="input-container-field password-input">
 				<input type={visible ? "text" : "password"} name="password" placeholder="••••••••••••" onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange({ e, expression, error: "Invalid password", setError, setIsValid, setter: props.setter })} />
-				<Button type='button' icon={visible ? <EyeSlashIcon /> : <EyeIcon />} action={() => setVisible((current) => !current)} />
+				<Button type='button' condition='normal' icon={visible ? <EyeSlashIcon /> : <EyeIcon />} action={() => setVisible((current) => !current)} />
 			</div>
 		</div>
 	);

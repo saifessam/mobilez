@@ -4,28 +4,30 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: calc(var(--spacing) / 4);
-  padding: var(--half-spacing);
-  border-radius: var(--border-radius);
   cursor: pointer;
+}
+
+button.fail {
+  background-color: var(--fail-color) !important;
+  color: var(--background-secondary) !important;
+}
+
+button.success {
+  background-color: var(--success-color) !important;
+  color: var(--background-secondary) !important;
 }
 
 button span {
   white-space: nowrap;
   color: var(--accent-color);
-}
-
-button svg path {
-  fill: var(--accent-color);
+  font-size: var(--small-font);
 }
 
 /* primary button */
 button.primary {
   background-color: var(--accent-color);
-}
-
-button.primary svg path {
-  fill: var(--background-secondary);
+  padding: var(--half-spacing);
+  border-radius: var(--border-radius);
 }
 
 button.primary span {
@@ -35,28 +37,12 @@ button.primary span {
 /* secondary button */
 button.secondary {
   background-color: var(--background-secondary);
+  padding: var(--half-spacing);
+  border-radius: var(--border-radius);
 }
 
 button.secondary span {
   color: var(--accent-color) !important;
-}
-
-button.secondary svg path {
-  fill: var(--accent-color);
-}
-
-/* small button */
-button.small {
-  padding: var(--half-spacing);
-}
-
-button.small span {
-  font-size: var(--small-font);
-}
-
-button.small svg {
-  width: var(--medium-font);
-  height: var(--medium-font);
 }
 
 /* disabled button */
@@ -65,5 +51,5 @@ button:disabled {
 }
 
 button:not(:disabled):hover {
-  border-radius: var(--circular-border-radius);
+  border-radius: var(--hover-border-radius);
 }

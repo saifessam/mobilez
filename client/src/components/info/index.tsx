@@ -62,7 +62,7 @@ function Info(props: Props) {
 					<span>{props.data.condition}</span>
 				</div>
 			</div>
-			<Button type="button" label={loading ? 'Loading' : 'Add to cart'} disabled={props.data.stock === 0} action={addtoCart} primary />
+			<Button type="button" condition='normal' label={loading ? 'Loading' : 'Add to cart'} disabled={props.data.stock === 0} action={addtoCart} primary />
 		</div>
 	);
 }

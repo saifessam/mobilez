@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import OrderCard from "../../components/cards/order";
 import Loading from "../../components/loading";
+import Message from "../../components/message";
 import Section from "../../components/section";
 import useAuthToken from "../../hooks/useAuthToken";
 import OrderData from "../../types/order-data";
 
 function CartPage() {
+	const [loading, setLoading] = useState<boolean>(true);
 	const [orders, setOrders] = useState<OrderData[]>([]);
 	const authToken = useAuthToken();
 
@@ -21,6 +23,7 @@ function CartPage() {
 				} catch (error) {
 					console.error("Request error", error);
 				}
+				setLoading(false);
 			}
 		}
 
@@ -29,17 +32,25 @@ function CartPage() {
 		return () => controller.abort();
 	}, [authToken?.id]);
 
-	if (orders?.length === 0) {
+	if (loading) {
 		return <Loading message="Loading..." />;
 	} else {
-		return (
-			<Section alignment="row" addSpacing>
-				<Section alignment="column" addSpacing>
-					{orders.map((order) => order.items.map((item) => <OrderCard id={item.device} quntity={item.quantity} key={item.device} />))}
+		if (orders?.length === 0) {
+			return (
+				<Section alignment="main" centerContent>
+					<Message message="Empty Cart" decription="Your cart is empty. add any device to be shown here" redirect="/" />
 				</Section>
-				<Section alignment="column" addSpacing title="Cart Checkout"></Section>
-			</Section>
-		);
+			);
+		} else {
+			return (
+				<Section alignment="row" addSpacing>
+					<Section alignment="column" addSpacing>
+						{orders.map((order) => order.items.map((item) => <OrderCard id={item.device} quntity={item.quantity} key={item.device} />))}
+					</Section>
+					<Section alignment="column" addSpacing title="Cart Checkout"></Section>
+				</Section>
+			);
+		}
 	}
 }
 

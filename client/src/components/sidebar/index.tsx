@@ -30,7 +30,7 @@ function Sidebar(props: Props) {
 				{authToken && authToken.role === 'ADMIN' ? <li className={props.state.index === 4 ? "active" : undefined} onClick={() => props.state.setIndex(4)}>Manage orders</li> : undefined}
 				{authToken && authToken.role === 'ADMIN' ? <li className={props.state.index === 5 ? "active" : undefined} onClick={() => props.state.setIndex(5)}>Manage users</li> : undefined}
 			</ul>
-			<Button type='button' label='Sign out' action={handleSignOut} primary />
+			<Button type='button' condition='normal' label='Sign out' action={handleSignOut} primary />
 		</aside>
 	);
 }

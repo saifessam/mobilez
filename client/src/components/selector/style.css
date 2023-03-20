@@ -4,7 +4,7 @@
   justify-content: flex-start;
   align-items: stretch;
   background-color: var(--background-primary);
-  border-radius: var(--circular-border-radius);
+  border-radius: var(--hover-border-radius);
   overflow: hidden;
 }
 

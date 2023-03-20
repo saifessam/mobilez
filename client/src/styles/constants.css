@@ -24,6 +24,6 @@
   /*units*/
   --spacing: 24px;
   --half-spacing: 12px;
-  --border-radius: 12px;
-  --circular-border-radius: 100px;
+  --border-radius: 6px;
+  --hover-border-radius: 12px;
 }

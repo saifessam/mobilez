@@ -18,24 +18,24 @@ section .section-header h3 {
   font-size: var(--large-font);
 }
 
-section .section-body.has-padding {
+section.has-padding {
   padding: var(--spacing);
 }
 
-section .section-body.center-content {
+section.center-content {
   align-items: center !important;
   justify-content: center !important;
 }
 
-section .section-body.add-spacing {
+section.add-spacing {
   gap: var(--spacing);
 }
 
-section .section-body.fit-content {
+section.fit-content {
   width: auto !important;
 }
 
-section .section-body.main {
+section.main {
   position: relative;
   flex: 1;
   display: flex;
@@ -45,21 +45,21 @@ section .section-body.main {
   padding: 0;
 }
 
-section .section-body.row {
+section.row {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-section .section-body.column {
+section.column {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-section .section-body.grid {
+section.grid {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -68,37 +68,37 @@ section .section-body.grid {
   gap: var(--spacing);
 }
 
-/* section .section-body.grid > * {
+/* section.grid > * {
   width: calc(25% - var(--spacing));
 } */
 
-/* section .section-body.grid {
+/* section.grid {
   display: grid;
   justify-items: start;
   grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   gap: var(--spacing);
 } */
 
-section .section-body.grid3 {
+section.grid3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   gap: var(--spacing);
 }
 
 @media (max-width: 559px) {
-  section .section-body.grid > * {
+  section.grid > * {
     width: calc(100% - var(--spacing));
   }
 }
 
 @media (min-width: 560px) and (max-width: 767px) {
-  section .section-body.grid > * {
+  section.grid > * {
     width: calc(50% - var(--spacing));
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  section .section-body.grid > * {
+  section.grid > * {
     width: calc(33.33% - var(--spacing));
   }
 }
