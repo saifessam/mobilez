@@ -1,4 +1,4 @@
-declare type DeviceData = {
+declare type DeviceType = {
 	_id?: string;
 	type: string;
 	condition: string;
@@ -13,4 +13,4 @@ declare type DeviceData = {
 	stock: number;
 };
 
-export default DeviceData;
+export default DeviceType;

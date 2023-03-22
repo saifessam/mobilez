@@ -4,11 +4,5 @@
 
 #### Client
 
-- Updated `CartPage` fetch functionality
-- Added page refresh after redirection
-
-#### Server
-
-- Added type definitions for each model
-- Updated `orders/create` functionality
-- Added functionality to `orders/remove`
+- Updated all types in `/client/src/types`
+- Updated `handleSubmit` functions in `UserAuthorizationPage` and `UsercreationPage`

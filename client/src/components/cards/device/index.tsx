@@ -1,26 +1,26 @@
 import { useEffect, useState } from 'react';
 import useAuthToken from '../../../hooks/useAuthToken';
-import DeviceData from '../../../types/device-data';
+import DeviceType from '../../../types/device';
 import Message from '../../../types/message';
-import OrderData from '../../../types/order-data';
+import OrderType from '../../../types/order';
 import currencyFormat from '../../../utilities/currency-format';
 import Button from '../../button';
 import './style.css';
 
 interface Props {
-	data: DeviceData;
+	data: DeviceType;
 }
 
 function DeviceCard(props: Props) {
 	const authToken = useAuthToken();
-	const [orderData, setOrderData] = useState<OrderData>({ receiver: "", items: [{ device: props.data._id!, quantity: 1 }], status: "SAVED" });
+	const [orderData, setOrderData] = useState<OrderType>({ receiver: "", items: [{ device: props.data._id!, quantity: 1 }], status: "SAVED" });
 	const [label, setLabel] = useState<Message>({ succeed: null, response: "Add to cart" });
 
 	useEffect(() => {
 		if (authToken) setOrderData((prev) => ({ ...prev, receiver: authToken.id }));
 	}, [authToken]);
 
-	async function addtoCart(): Promise<void> {
+	async function addToCart(): Promise<void> {
 		setLabel((prev) => ({ ...prev, response: "Loading" }));
 		try {
 			const options: RequestInit = { method: "POST", body: new Blob([JSON.stringify(orderData)], { type: 'application/json' }), cache: "no-store", credentials: "include" };
@@ -42,7 +42,7 @@ function DeviceCard(props: Props) {
 				<span>{props.data.ram} RAM - {props.data.rom} ROM</span>
 				<span>{currencyFormat(props.data.price!)}</span>
 			</div>
-			<Button type="button" condition={label.succeed === null ? 'primary' : label.succeed ? 'success' : 'fail'} label={label.response!} disabled={props.data.stock === 0} action={addtoCart} />
+			<Button type="button" condition={label.succeed === null ? 'primary' : label.succeed ? 'success' : 'fail'} label={label.response!} disabled={props.data.stock === 0} action={addToCart} />
 		</div>
 	);
 }

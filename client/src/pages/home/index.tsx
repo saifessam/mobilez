@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import DeviceCard from "../../components/cards/device";
 import Loading from "../../components/loading";
-import DeviceData from "../../types/device-data";
+import DeviceType from "../../types/device";
 import Section from "./../../components/section";
 
 function HomePage() {
-	const [devices, setDevices] = useState<DeviceData[]>();
+	const [devices, setDevices] = useState<DeviceType[]>();
 
 	useEffect(() => {
 		const controller: AbortController = new AbortController();
@@ -14,7 +14,7 @@ function HomePage() {
 			try {
 				const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default" };
 				const response = await fetch("/devices", options);
-				await response.json().then((data: DeviceData[]) => setDevices(data));
+				await response.json().then((data: DeviceType[]) => setDevices(data));
 			} catch (error) {
 				console.error("Request error", error);
 			}

@@ -6,11 +6,11 @@ import FileInput from "../../../../components/inputs/file";
 import NumberInput from "../../../../components/inputs/number";
 import TextInput from "../../../../components/inputs/text";
 import Section from "../../../../components/section";
-import DeviceData from "../../../../types/device-data";
+import DeviceType from "../../../../types/device";
 import Message from "../../../../types/message";
 
 function DashboardDevicesPage() {
-	const [data, setData] = useState<DeviceData>();
+	const [data, setData] = useState<DeviceType>();
 	const [loading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<Message>({ succeed: null, response: null });
 

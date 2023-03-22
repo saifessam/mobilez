@@ -1,16 +1,16 @@
 import jwtDecode from 'jwt-decode';
 import { useEffect, useState } from 'react';
 import { useCookies } from "react-cookie";
-import AuthToken from '../types/auth-token';
+import Token from '../types/token';
 
 function useAuthToken() {
 	const [cookies] = useCookies(["auth_token"]);
-	const [decodedToken, setDecodedToken] = useState<AuthToken | undefined>(undefined);
+	const [decodedToken, setDecodedToken] = useState<Token | undefined>(undefined);
 
 	useEffect(() => {
 		async function getAuthToken(): Promise<void> {
 			if (cookies['auth_token']) {
-				const decoded: AuthToken = await jwtDecode(cookies["auth_token"]);
+				const decoded: Token = await jwtDecode(cookies["auth_token"]);
 				setDecodedToken(decoded);
 			} else {
 				setDecodedToken(undefined);

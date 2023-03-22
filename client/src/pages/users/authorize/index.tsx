@@ -4,22 +4,14 @@ import Form from '../../../components/form';
 import EmailInput from '../../../components/inputs/email';
 import PasswordInput from '../../../components/inputs/password';
 import Section from '../../../components/section';
-import AuthorizationData from '../../../types/authorization-data';
 import Message from '../../../types/message';
+import handleResult from '../../../utilities/handle-result';
 
 function UserAuthorizationPage() {
-	const [data, setData] = useState<AuthorizationData>({ email: null, password: null });
+	const [data, setData] = useState({ email: null, password: null });
 	const [loading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<Message>({ succeed: null, response: null });
 	const navigate = useNavigate();
-
-	function handleAuthorization(data: Message) {
-		setMessage(data);
-		if (data.succeed) setTimeout(() => {
-			navigate('/', { replace: true });
-			window.location.reload();
-		}, 2500);
-	}
 
 	async function handleSubmit(e: SyntheticEvent): Promise<void> {
 		e.preventDefault();
@@ -27,11 +19,13 @@ function UserAuthorizationPage() {
 		try {
 			const options: RequestInit = { method: "POST", body: new Blob([JSON.stringify(data)], { type: 'application/json' }), cache: "no-store", credentials: "include" };
 			const response = await fetch("/users/authorize", options);
-			await response.json().then((data) => handleAuthorization(data));
+			const result = await response.json();
+			handleResult({ setMessage, result, navigate });
 		} catch (error) {
 			console.error("Request error", error);
+		} finally {
+			setLoading(false);
 		}
-		setLoading(false);
 	}
 
 	return (

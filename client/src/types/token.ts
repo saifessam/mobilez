@@ -1,8 +1,8 @@
-declare type AuthToken = {
+declare type Token = {
 	id: string;
 	role: "ADMIN" | "CONSUMER";
 	iat: Date;
 	exp: Date;
 };
 
-export default AuthToken;
+export default Token;

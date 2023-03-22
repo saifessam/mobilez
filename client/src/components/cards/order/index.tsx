@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useAuthToken from "../../../hooks/useAuthToken";
-import DeviceData from "../../../types/device-data";
+import DeviceType from "../../../types/device";
 import Message from "../../../types/message";
 import currencyFormat from "../../../utilities/currency-format";
 import Button from "../../button";
@@ -12,7 +12,7 @@ interface Props {
 }
 
 function OrderCard(props: Props) {
-	const [device, setDevice] = useState<DeviceData>();
+	const [device, setDevice] = useState<DeviceType>();
 	const authToken = useAuthToken();
 
 	useEffect(() => {
