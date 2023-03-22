@@ -24,12 +24,11 @@ function Sidebar(props: Props) {
 	return (
 		<aside>
 			<ul>
-				<li><Button type="button" condition={props.state.index === 0 ? "primary" : "default"} label="Account details" action={() => props.state.setIndex(0)} /></li>
-				<li><Button type="button" condition={props.state.index === 1 ? "primary" : "default"} label="Shipping address" action={() => props.state.setIndex(1)} /></li>
-				<li><Button type="button" condition={props.state.index === 2 ? "primary" : "default"} label="Placed orders" action={() => props.state.setIndex(2)} /></li>
-				{authToken && authToken.role === 'ADMIN' ? <li><Button type="button" condition={props.state.index === 3 ? "primary" : "default"} label="Manage devices" action={() => props.state.setIndex(3)} /></li> : undefined}
-				{authToken && authToken.role === 'ADMIN' ? <li><Button type="button" condition={props.state.index === 4 ? "primary" : "default"} label="Manage orders" action={() => props.state.setIndex(4)} /></li> : undefined}
-				{authToken && authToken.role === 'ADMIN' ? <li><Button type="button" condition={props.state.index === 5 ? "primary" : "default"} label="Manage users" action={() => props.state.setIndex(5)} /></li> : undefined}
+				<li><Button type="button" condition={props.state.index === 0 ? "primary" : "secondary"} label="Account details" action={() => props.state.setIndex(0)} /></li>
+				<li><Button type="button" condition={props.state.index === 1 ? "primary" : "secondary"} label="Placed orders" action={() => props.state.setIndex(1)} /></li>
+				{authToken && authToken.admin ? <li><Button type="button" condition={props.state.index === 2 ? "primary" : "secondary"} label="Manage devices" action={() => props.state.setIndex(2)} /></li> : undefined}
+				{authToken && authToken.admin ? <li><Button type="button" condition={props.state.index === 3 ? "primary" : "secondary"} label="Manage orders" action={() => props.state.setIndex(3)} /></li> : undefined}
+				{authToken && authToken.admin ? <li><Button type="button" condition={props.state.index === 4 ? "primary" : "secondary"} label="Manage users" action={() => props.state.setIndex(4)} /></li> : undefined}
 			</ul>
 			<Button type='button' condition='primary' label='Sign out' action={handleSignOut} />
 		</aside>

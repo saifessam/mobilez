@@ -9,7 +9,7 @@ function Navbar() {
 		<nav>
 			<Link to={'/'}><span>Mobilez</span></Link>
 			<ul>
-				<li><Link to={authToken ? '/users/profile' : '/users/authorize'}>{authToken ? "Profile" : "Join"}</Link></li>
+				<li><Link to={'/profile'}>Profile</Link></li>
 				{authToken ? <li><Link to={'/cart'}>Cart</Link></li> : undefined}
 			</ul>
 		</nav>

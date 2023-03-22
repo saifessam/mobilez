@@ -3,9 +3,7 @@ import Footer from "../components/footer";
 import Main from "../components/main";
 import Navbar from "../components/navbar";
 import useAuthToken from "../hooks/useAuthToken";
-import UserAuthorizationPage from '../pages/users/authorize';
-import UserCreationPage from '../pages/users/create';
-import ProfilePage from "../pages/users/profile";
+import ProfilePage from "../pages/profile";
 import CartPage from './../pages/cart';
 import ErrorPage from './../pages/error';
 import HomePage from './../pages/home';
@@ -24,11 +22,7 @@ function MainLayout() {
 						<Route index element={<CartPage />} />
 						<Route path='checkout' element={<></>} />
 					</Route>
-					<Route path='users'>
-						<Route path={authToken ? undefined : 'authorize'} element={<UserAuthorizationPage />} />
-						<Route path={authToken ? undefined : 'create'} element={<UserCreationPage />} />
-						<Route path='profile' element={<ProfilePage />} />
-					</Route>
+					<Route path='profile' element={<ProfilePage />} />
 				</Routes>
 			</Main>
 			<Footer />

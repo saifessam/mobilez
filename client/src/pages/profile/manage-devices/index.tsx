@@ -1,13 +1,13 @@
 import { SyntheticEvent, useState } from "react";
-import DevicesJSON from "../../../../assets/jsons/devices.json";
-import Form from "../../../../components/form";
-import CarouselInput from "../../../../components/inputs/carousel";
-import FileInput from "../../../../components/inputs/file";
-import NumberInput from "../../../../components/inputs/number";
-import TextInput from "../../../../components/inputs/text";
-import Section from "../../../../components/section";
-import DeviceType from "../../../../types/device";
-import Message from "../../../../types/message";
+import DevicesJSON from "../../../assets/jsons/devices.json";
+import Form from "../../../components/form";
+import CarouselInput from "../../../components/inputs/carousel";
+import FileInput from "../../../components/inputs/file";
+import NumberInput from "../../../components/inputs/number";
+import TextInput from "../../../components/inputs/text";
+import Section from "../../../components/section";
+import DeviceType from "../../../types/device";
+import Message from "../../../types/message";
 
 function DashboardDevicesPage() {
 	const [data, setData] = useState<DeviceType>();

@@ -1,10 +1,11 @@
 declare type UserType = {
 	_id?: string;
-	name: string;
 	email: string;
-	phone: string;
 	password: string;
-	role: string;
+	admin?: boolean;
+	name?: string;
+	phone?: string;
+	address?: string[];
 };
 
 export default UserType;

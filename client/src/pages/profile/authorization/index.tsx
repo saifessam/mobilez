@@ -5,10 +5,11 @@ import EmailInput from '../../../components/inputs/email';
 import PasswordInput from '../../../components/inputs/password';
 import Section from '../../../components/section';
 import Message from '../../../types/message';
+import UserType from '../../../types/user';
 import handleResult from '../../../utilities/handle-result';
 
-function UserAuthorizationPage() {
-	const [data, setData] = useState({ email: null, password: null });
+function AuthorizationForm() {
+	const [data, setData] = useState<UserType>();
 	const [loading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<Message>({ succeed: null, response: null });
 	const navigate = useNavigate();
@@ -30,7 +31,7 @@ function UserAuthorizationPage() {
 
 	return (
 		<Section alignment='main' centerContent>
-			<Form onSubmit={handleSubmit} title='Sign In' link={{ path: "/users/create", label: "Sign up here" }} message={message} loading={loading} assistance>
+			<Form onSubmit={handleSubmit} title='Authorize' message={message} loading={loading} assistance>
 				<EmailInput setter={setData} />
 				<PasswordInput setter={setData} />
 			</Form>
@@ -38,4 +39,4 @@ function UserAuthorizationPage() {
 	);
 }
 
-export default UserAuthorizationPage;
+export default AuthorizationForm;

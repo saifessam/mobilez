@@ -22,15 +22,11 @@ aside ul {
   overflow-y: auto;
 }
 
-aside ul li {
-  padding: var(--half-spacing);
-  color: var(--text-secondary);
-  font-weight: 400;
-  border-radius: var(--border-radius);
-  cursor: pointer;
+aside ul li button {
+  width: 100%;
+  justify-content: flex-start;
 }
 
-aside ul li.active {
+aside ul li button.secondary span {
   color: var(--text-primary);
-  font-weight: 700;
 }

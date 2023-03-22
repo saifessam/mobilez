@@ -1,6 +1,6 @@
 declare type Token = {
 	id: string;
-	role: "ADMIN" | "CONSUMER";
+	admin: boolean;
 	iat: Date;
 	exp: Date;
 };
