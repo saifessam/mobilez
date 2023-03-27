@@ -1,5 +1,7 @@
 .checkout {
-  width: 25%;
+  position: sticky;
+  top: calc(4rem + var(--spacing));
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,6 +14,35 @@
 
 .checkout .checkout-header span {
   font-size: var(--large-font);
+  font-weight: 700;
+}
+
+.checkout .checkout-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.checkout .checkout-body .checkout-body-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--half-spacing) 0;
+  border-bottom: thin solid transparent;
+}
+
+.checkout .checkout-body .checkout-body-item:not(:last-child) {
+  border-color: var(--background-primary);
+}
+
+.checkout .checkout-body .checkout-body-item span:nth-child(1) {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.checkout .checkout-body .checkout-body-item span:nth-child(2) {
   font-weight: 700;
 }
 

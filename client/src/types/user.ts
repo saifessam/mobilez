@@ -6,8 +6,6 @@ declare type UserType = {
 	name?: string;
 	phone?: string;
 	address?: string[];
-	createdAt: Date;
-	updatedAt: Date;
 };
 
 export default UserType;

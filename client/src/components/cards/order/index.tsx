@@ -9,6 +9,7 @@ import './style.css';
 interface Props {
 	id: string;
 	quntity: number;
+	price: number;
 }
 
 function OrderCard(props: Props) {
@@ -48,7 +49,6 @@ function OrderCard(props: Props) {
 	if (!device) {
 		return <div className="order-card">Loading...</div>;
 	} else {
-		console.log("device ===>", device);
 		return (
 			<div className="order-card">
 				<div className="order-card-image">
@@ -57,7 +57,7 @@ function OrderCard(props: Props) {
 				<div className="order-card-details">
 					<span>{device.color} {device.brand} {device.model}</span>
 					<span>{device.ram} RAM - {device.rom} ROM</span>
-					<span>{currencyFormat(device.price!)}</span>
+					<span>{currencyFormat(props.price)}</span>
 					<span>Quntity: {props.quntity}</span>
 				</div>
 				<Button type="button" condition="fail" label="Remove" action={removeDevice} />

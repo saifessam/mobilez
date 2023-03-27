@@ -17,7 +17,7 @@ async function create(req: Request, res: Response) {
 				const existingDevice = existingOrder.items.some((item) => item.device.toString() === req.body.items[0].device);
 				const filter = { receiver: req.body.receiver };
 				// 4. If the device is already existed (increment quntity by 1) if not (add new device to items array)
-				const update = existingDevice ? { $inc: { 'items.$[elem].quantity': 1 } } : { $addToSet: { items: req.body.items[0] } };
+				const update = existingDevice ? { $inc: { 'items.$[elem].quantity': 1 }, $mul: { 'items.$[elem].price': 2 } } : { $addToSet: { items: req.body.items[0] } };
 				const options = { arrayFilters: [{ 'elem.device': req.body.items[0].device }] };
 				// 5. Executing update function
 				await Order.updateOne(filter, update, options);

@@ -13,7 +13,7 @@ interface Props {
 
 function DeviceCard(props: Props) {
 	const authToken = useAuthToken();
-	const [orderData, setOrderData] = useState<OrderType>({ receiver: "", items: [{ device: props.data._id!, quantity: 1 }], status: "SAVED" });
+	const [orderData, setOrderData] = useState<OrderType>({ receiver: "", items: [{ device: props.data._id!, quantity: 1, price: props.data.price }], status: "SAVED" });
 	const [label, setLabel] = useState<Message>({ succeed: null, response: props.data.stock === 0 ? "Out of stock" : "Add to cart" });
 
 	useEffect(() => {

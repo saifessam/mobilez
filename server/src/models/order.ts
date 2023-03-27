@@ -5,6 +5,7 @@ const schema = new Schema({
 	items: [{
 		device: { type: Schema.Types.ObjectId, ref: 'Device' },
 		quantity: { type: Number, default: 1, required: true },
+		price: { type: Number, required: true },
 	}],
 	address: { type: String },
 	status: { type: String, required: true },

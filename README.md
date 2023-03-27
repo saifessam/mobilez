@@ -4,9 +4,11 @@
 
 #### Client
 
-- Finished `AccountDetails` tab in `/uesrs/profile`
+- Finished `Checkout` component in `/cart`
+- Updated items array in `OrderType`
 
 #### Server
 
-- Changed `/devices/:limit` to `/devices/limited/:limit`
-- Added user update functionality
+- Updated `Order` model
+- Updated items array in `OrderType`
+- Updated order creation funcionality

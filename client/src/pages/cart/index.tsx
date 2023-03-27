@@ -31,6 +31,22 @@ function CartPage() {
 		return () => controller.abort();
 	}, [authToken]);
 
+	function getTotalCount(): number {
+		let total: number = 0;
+
+		items.map((item) => total += item.quantity);
+
+		return total;
+	}
+
+	function getPrice(): number {
+		let total: number = 0;
+
+		items.map((item) => total += item.price);
+
+		return total;
+	}
+
 	if (loading) {
 		return <Loading message="Loading..." />;
 	} else {
@@ -41,12 +57,14 @@ function CartPage() {
 				</Section>
 			);
 		} else {
+			console.log("getTotalCount ==>", getTotalCount());
+
 			return (
 				<Section alignment="row" addSpacing>
-					<Section alignment="grid" addSpacing>
-						{items.map((order) => <OrderCard id={order.device} quntity={order.quantity} key={order._id} />)}
+					<Section alignment="column" addSpacing>
+						{items.map((order) => <OrderCard id={order.device} quntity={order.quantity} price={order.price} key={order._id} />)}
 					</Section>
-					<Checkout />
+					<Checkout count={items.length} totalCount={getTotalCount()} price={getPrice()} />
 				</Section>
 			);
 		}

@@ -1,9 +1,9 @@
 .order-card {
-  width: calc(33.33% - var(--spacing));
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: stretch;
+  align-items: flex-start;
   gap: var(--half-spacing);
   padding: var(--half-spacing);
   background-color: var(--background-secondary);
@@ -15,6 +15,7 @@
 }
 
 .order-card .order-card-image {
+  width: 100px;
   aspect-ratio: 1/1;
   overflow: hidden;
 }
@@ -27,6 +28,7 @@
 }
 
 .order-card .order-card-details {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -41,6 +43,7 @@
 
 .order-card .order-card-details span:nth-child(1) {
   font-weight: 700;
+  margin-bottom: var(--half-spacing);
 }
 
 .order-card .order-card-details span:not(span:nth-child(1)) {
