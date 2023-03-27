@@ -15,24 +15,22 @@ function CartPage() {
 	useEffect(() => {
 		const controller: AbortController = new AbortController();
 
-		async function getOrders(): Promise<void> {
-			if (authToken?.id) {
-				try {
-					const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default", credentials: "include" };
-					const response = await fetch(`/orders/cart/${authToken.id}`, options);
-					await response.json().then((data: OrderType) => setItems(data.items));
-				} catch (error) {
-					console.error("Request error", error);
-				} finally {
-					setLoading(false);
-				}
+		async function getOrders(id: string): Promise<void> {
+			try {
+				const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default", credentials: "include" };
+				const response: OrderType = await (await fetch(`/orders/cart/${id}`, options)).json();
+				setItems(response.items);
+			} catch (error) {
+				console.error("Request error", error);
+			} finally {
+				setLoading(false);
 			}
 		}
 
-		getOrders();
+		if (authToken) getOrders(authToken.id);
 
 		return () => controller.abort();
-	}, [authToken?.id]);
+	}, [authToken]);
 
 	if (loading) {
 		return <Loading message="Loading..." />;

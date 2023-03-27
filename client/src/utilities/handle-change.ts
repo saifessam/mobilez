@@ -17,13 +17,13 @@ function handleChange(props: Props): void {
 		} else {
 			props.setError("");
 			props.setIsValid(true);
-			props.setter((prev: any) => ({ ...prev, [props.e.target.name]: props.e.target.value.trim() }));
+			props.setter((prev: any) => ({ ...prev, [props.e.target.name]: props.e.target.value }));
 		}
 	} else {
 		if (props.e.target.value === '') {
 			props.setter((prev: any) => ({ ...prev, [props.e.target.name]: null }));
 		} else {
-			props.setter((prev: any) => ({ ...prev, [props.e.target.name]: props.e.target.value.trim() }));
+			props.setter((prev: any) => ({ ...prev, [props.e.target.name]: props.e.target.value }));
 		}
 	}
 }

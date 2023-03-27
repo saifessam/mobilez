@@ -5,6 +5,7 @@ import './style.css';
 
 interface Props {
 	setter: any;
+	value?: string;
 }
 
 function EmailInput(props: Props) {
@@ -24,6 +25,7 @@ function EmailInput(props: Props) {
 					type="email"
 					name="email"
 					placeholder="example@email.com"
+					defaultValue={props.value}
 					onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange({ e, expression, error: "Invalid email address", setError, setIsValid, setter: props.setter })}
 				/>
 			</div>

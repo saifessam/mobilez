@@ -12,7 +12,7 @@ function handleResult({ setMessage, result, navigate }: Props): void {
 	if (result.succeed) setTimeout(() => {
 		navigate('/', { replace: true });
 		window.location.reload();
-	}, 2500);
+	}, 1000);
 };
 
 export default handleResult;

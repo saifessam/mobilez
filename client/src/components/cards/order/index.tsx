@@ -48,6 +48,7 @@ function OrderCard(props: Props) {
 	if (!device) {
 		return <div className="order-card">Loading...</div>;
 	} else {
+		console.log("device ===>", device);
 		return (
 			<div className="order-card">
 				<div className="order-card-image">

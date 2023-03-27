@@ -5,6 +5,8 @@ import './style.css';
 
 interface Props {
 	setter: any;
+	value?: string;
+	placeholder?: string;
 }
 
 function PhoneInput(props: Props) {
@@ -20,7 +22,7 @@ function PhoneInput(props: Props) {
 				{isValid ? <TickCircleIcon /> : undefined}
 				{error !== "" ? <span className="input-container-label-error">{error}</span> : undefined}
 			</label>
-			<div className="input-container-field"> <input type="text" name="phone" placeholder="01XXXXXXXXX" onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange({ e, expression, error: "Invalid phone number", setError, setIsValid, setter })} /></div>
+			<div className="input-container-field"> <input type="text" name="phone" placeholder={props.placeholder ?? "01XXXXXXXXX"} defaultValue={props.value} onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange({ e, expression, error: "Invalid phone number", setError, setIsValid, setter })} /></div>
 		</div>
 	);
 }

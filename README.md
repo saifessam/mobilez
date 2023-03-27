@@ -4,9 +4,9 @@
 
 #### Client
 
-- Removed `@reduxjs/toolkit`
-- Added `Header` component
+- Finished `AccountDetails` tab in `/uesrs/profile`
 
 #### Server
 
-- Modified `/devices` to accept "limit" param `/devices/:limit` to return only need amount of devices
+- Changed `/devices/:limit` to `/devices/limited/:limit`
+- Added user update functionality

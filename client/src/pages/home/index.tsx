@@ -14,7 +14,7 @@ function HomePage() {
 		async function getDevices(): Promise<void> {
 			try {
 				const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default" };
-				const response = await fetch("/devices/8", options);
+				const response = await fetch("/devices/limited/8", options);
 				await response.json().then((data: DeviceType[]) => setDevices(data));
 			} catch (error) {
 				console.error("Request error", error);
