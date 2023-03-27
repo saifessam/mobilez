@@ -14,7 +14,7 @@ interface Props {
 function DeviceCard(props: Props) {
 	const authToken = useAuthToken();
 	const [orderData, setOrderData] = useState<OrderType>({ receiver: "", items: [{ device: props.data._id!, quantity: 1 }], status: "SAVED" });
-	const [label, setLabel] = useState<Message>({ succeed: null, response: "Add to cart" });
+	const [label, setLabel] = useState<Message>({ succeed: null, response: props.data.stock === 0 ? "Out off stock" : "Add to cart" });
 
 	useEffect(() => {
 		if (authToken) setOrderData((prev) => ({ ...prev, receiver: authToken.id }));
