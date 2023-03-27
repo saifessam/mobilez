@@ -22,7 +22,6 @@ function HomePage() {
 		}
 
 		getDevices();
-
 		return () => controller.abort();
 	}, []);
 

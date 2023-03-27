@@ -28,7 +28,6 @@ function CartPage() {
 		}
 
 		if (authToken) getOrders(authToken.id);
-
 		return () => controller.abort();
 	}, [authToken]);
 

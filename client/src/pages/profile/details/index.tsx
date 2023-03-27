@@ -1,7 +1,6 @@
 import { SyntheticEvent, useEffect, useState } from "react";
 import Form from "../../../components/form";
 import EmailInput from "../../../components/inputs/email";
-import PasswordInput from "../../../components/inputs/password";
 import PhoneInput from "../../../components/inputs/phone";
 import TextInput from "../../../components/inputs/text";
 import Loading from "../../../components/loading";
@@ -30,7 +29,6 @@ function ProfileDetailsPage() {
 		}
 
 		if (authToken) getUserData(authToken.id);
-
 		return () => controller.abort();
 	}, [authToken]);
 
