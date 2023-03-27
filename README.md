@@ -4,13 +4,9 @@
 
 #### Client
 
-- Removed `AddressTab` from `ProfilePage`
-- Removed `AuthorizationPage` and `CreationPage`
-- Moved user authorization into `ProfilePage` using only one form
-- Updated `UserType`
+- Removed `@reduxjs/toolkit`
+- Added `Header` component
 
 #### Server
 
-- Updated `UserType`
-- Removed `/users/create` route and functionality
-- Updated `User` model fields
+- Modified `/devices` to accept "limit" param `/devices/:limit` to return only need amount of devices

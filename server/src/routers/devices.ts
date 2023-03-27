@@ -8,7 +8,7 @@ import authenticate from '../middlewares/authenticate';
 
 const devicesRouter = Router();
 
-devicesRouter.get('/', readAll);
+devicesRouter.get('/:limit', readAll);
 devicesRouter.post('/create', authenticate, create);
 devicesRouter.put('/update', authenticate, update);
 devicesRouter.delete('/remove', authenticate, remove);
