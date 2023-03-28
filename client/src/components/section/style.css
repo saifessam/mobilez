@@ -7,24 +7,42 @@ section {
   gap: var(--half-spacing);
 }
 
-section.has-padding {
+section .section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: var(--half-spacing) 0;
+}
+
+section .section-header span {
+  font-size: var(--large-font);
+  font-weight: 700;
+}
+
+section .section-header a {
+  font-size: var(--small-font);
+  color: var(--accent-color);
+}
+
+section .section-body.has-padding {
   padding: var(--spacing);
 }
 
-section.center-content {
+section .section-body.center-content {
   align-items: center !important;
   justify-content: center !important;
 }
 
-section.add-spacing {
+section .section-body.add-spacing {
   gap: var(--spacing);
 }
 
-section.fit-content {
+section .section-body.fit-content {
   width: auto !important;
 }
 
-section.main {
+section .section-body.main {
   position: relative;
   flex: 1;
   display: flex;
@@ -34,21 +52,21 @@ section.main {
   padding: 0;
 }
 
-section.row {
+section .section-body.row {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-section.column {
+section .section-body.column {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-section.grid {
+section .section-body.grid {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -58,19 +76,19 @@ section.grid {
 }
 
 @media (max-width: 559px) {
-  section.grid > * {
+  section .section-body.grid > * {
     width: calc(100% - var(--spacing));
   }
 }
 
 @media (min-width: 560px) and (max-width: 767px) {
-  section.grid > * {
+  section .section-body.grid > * {
     width: calc(50% - var(--spacing));
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  section.grid > * {
+  section .section-body.grid > * {
     width: calc(33.33% - var(--spacing));
   }
 }

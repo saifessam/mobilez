@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  gap: var(--half-spacing);
+  gap: var(--spacing);
   padding: var(--half-spacing);
   background-color: var(--background-secondary);
   border-radius: var(--border-radius);
@@ -41,7 +41,6 @@
 
 .device-card .device-card-details span:nth-child(1) {
   font-weight: 700;
-  margin-bottom: var(--half-spacing);
 }
 
 .device-card .device-card-details span:not(span:nth-child(1)) {

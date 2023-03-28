@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './style.css';
 
 interface Props {
@@ -7,6 +8,7 @@ interface Props {
 	centerContent?: boolean;
 	addSpacing?: boolean;
 	fitContent?: boolean;
+	title?: { label: string; link: { label: string; path: string; }; };
 }
 
 function Section(props: Props) {
@@ -22,9 +24,12 @@ function Section(props: Props) {
 	}
 
 	return (
-		<section className={handleClassNames().join(" ")}>
-			{props.children}
-		</section>
+		<>
+			<section >
+				{!props.title ? undefined : <div className='section-header'><span>{props.title.label}</span><Link to={props.title.link.path}>{props.title.link.label}</Link></div>}
+				<div className={handleClassNames().join(" ")}>{props.children}</div>
+			</section>
+		</>
 	);
 }
 

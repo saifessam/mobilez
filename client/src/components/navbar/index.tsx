@@ -29,8 +29,8 @@ function Navbar() {
 		<nav>
 			<Link to={'/'}><span>Mobilez</span></Link>
 			<ul>
-				<li><Link to={'/profile'}>Profile</Link></li>
-				{authToken ? <li><Link to={'/cart'}>Cart ({count})</Link></li> : undefined}
+				<li><Link to={'/profile'}>{!authToken ? "Join" : "Profile"}</Link></li>
+				{!authToken ? undefined : <li><Link to={'/cart'}>Cart ({count})</Link></li>}
 			</ul>
 		</nav>
 	);

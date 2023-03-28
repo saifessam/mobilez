@@ -31,7 +31,8 @@ function HomePage() {
 		return (
 			<Section alignment="main" addSpacing>
 				<Header />
-				<Section alignment="grid">
+
+				<Section alignment="grid" title={{ label: "Featured Devices", link: { label: "Explore more devices →", path: "/devices" } }}>
 					{devices.map((device: DeviceType) => <DeviceCard data={device} key={device._id} />)}
 				</Section>
 			</Section>
