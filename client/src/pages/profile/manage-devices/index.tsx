@@ -6,6 +6,7 @@ import FileInput from "../../../components/inputs/file";
 import NumberInput from "../../../components/inputs/number";
 import TextInput from "../../../components/inputs/text";
 import Section from "../../../components/section";
+import useWindowSize from "../../../hooks/useWindowSize";
 import DeviceType from "../../../types/device";
 import Message from "../../../types/message";
 
@@ -13,6 +14,7 @@ function DashboardDevicesPage() {
 	const [data, setData] = useState<DeviceType>();
 	const [loading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<Message>({ succeed: null, response: null });
+	const windowSize = useWindowSize();
 
 	async function handleSubmit(e: SyntheticEvent): Promise<void> {
 		e.preventDefault();
@@ -42,7 +44,7 @@ function DashboardDevicesPage() {
 	}
 
 	return (
-		<Section alignment="row" addSpacing>
+		<Section alignment={windowSize.width! < 767 ? "column" : "row"} addSpacing>
 			<Section alignment="column">Devices</Section>
 			<Form onSubmit={handleSubmit} encType={"multipart/form-data"} title="Add new device" message={message} loading={loading}>
 				<CarouselInput label="Type" name="type" options={DevicesJSON.types} setter={setData} />

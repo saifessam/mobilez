@@ -1,5 +1,6 @@
 section {
   width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -76,6 +77,10 @@ section .section-body.grid {
 }
 
 @media (max-width: 559px) {
+  section .section-header span {
+    font-size: var(--medium-font);
+  }
+
   section .section-body.grid > * {
     width: calc(100% - var(--spacing));
   }

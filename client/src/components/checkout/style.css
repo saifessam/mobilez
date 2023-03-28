@@ -1,7 +1,7 @@
 .checkout {
   position: sticky;
   top: calc(4rem + var(--spacing));
-  width: 50%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -51,4 +51,17 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  gap: var(--half-spacing);
+}
+
+@media (max-width: 559px) {
+  .checkout {
+    width: 100%;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 767px) {
+  .checkout {
+    width: 100%;
+  }
 }

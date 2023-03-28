@@ -1,38 +1,77 @@
 header {
   height: 50vh;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  gap: calc(var(--spacing) * 2);
+  align-items: stretch;
+  align-self: center;
   overflow: hidden;
 }
 
-header section {
+header .header-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-}
-
-header section:nth-child(1) {
-  width: 40%;
-}
-
-header section:nth-child(2) {
-  width: 40%;
   align-items: center;
 }
 
-header section h1 {
+header .header-section h1 {
   font-size: var(--extra-large-font);
   font-weight: 700;
   color: var(--accent-color);
 }
 
-header section img {
-  width: 100%;
-  height: 100%;
+header .header-section img {
+  width: 90%;
+  height: 90%;
   object-fit: contain;
+  image-rendering: optimizeQuality;
   mix-blend-mode: multiply;
+}
+
+@media (max-width: 559px) {
+  header {
+    height: fit-content;
+    flex-direction: column-reverse;
+    gap: calc(var(--spacing) * 2);
+  }
+
+  header .header-section h1 {
+    font-size: var(--large-font);
+    text-align: center;
+  }
+
+  header .header-section p {
+    font-size: var(--small-font);
+    text-align: center;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 767px) {
+  header {
+    height: fit-content;
+    flex-direction: column-reverse;
+    gap: calc(var(--spacing) * 2);
+  }
+
+  header .header-section h1 {
+    font-size: var(--large-font);
+    text-align: center;
+  }
+
+  header .header-section p {
+    font-size: var(--small-font);
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  header .header-section h1 {
+    font-size: var(--large-font);
+  }
+
+  header .header-section p {
+    font-size: var(--small-font);
+  }
 }

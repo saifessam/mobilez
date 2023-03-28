@@ -5,12 +5,14 @@ import Loading from "../../components/loading";
 import Message from "../../components/message";
 import Section from "../../components/section";
 import useAuthToken from "../../hooks/useAuthToken";
+import useWindowSize from "../../hooks/useWindowSize";
 import OrderType from "../../types/order";
 
 function CartPage() {
 	const [loading, setLoading] = useState<boolean>(true);
 	const [items, setItems] = useState<OrderType["items"]>([]);
 	const authToken = useAuthToken();
+	const windowSize = useWindowSize();
 
 	useEffect(() => {
 		const controller: AbortController = new AbortController();
@@ -60,7 +62,7 @@ function CartPage() {
 			console.log("getTotalCount ==>", getTotalCount());
 
 			return (
-				<Section alignment="row" addSpacing>
+				<Section alignment={windowSize.width! < 767 ? "column" : "row"} addSpacing>
 					<Section alignment="column" addSpacing>
 						{items.map((order) => <OrderCard id={order.device} quntity={order.quantity} price={order.price} key={order._id} />)}
 					</Section>

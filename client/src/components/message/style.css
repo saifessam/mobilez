@@ -31,7 +31,7 @@
 }
 
 .message .message-body {
-  padding: var(--spacing) 0;
+  padding: var(--spacing);
   text-align: center;
 }
 

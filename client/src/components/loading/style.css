@@ -59,3 +59,23 @@
     min-width: 400px;
   }
 }
+
+@media (max-width: 559px) {
+  .loading span {
+    font-size: var(--large-font);
+  }
+
+  .loading .loader {
+    width: 100px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 767px) {
+  .loading span {
+    font-size: var(--large-font);
+  }
+
+  .loading .loader {
+    width: 100px;
+  }
+}

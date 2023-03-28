@@ -5,7 +5,7 @@ const storage = diskStorage({
 		callback(null, 'src/uploads/');
 	},
 	filename: (request, file, callback) => {
-		callback(null, `${Date.now()} - ${file.originalname}`);
+		callback(null, `${Date.now()}.${file.originalname.split(".").slice(-1)}`);
 	},
 });
 

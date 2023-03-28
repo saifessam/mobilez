@@ -38,6 +38,7 @@ function Checkout(props: Props) {
 			</div>
 			<div className="checkout-footer">
 				<Button type='button' condition='primary' label='Buy now' />
+				<Button type='button' condition='default' label='Clear cart' />
 			</div>
 		</div>
 	);

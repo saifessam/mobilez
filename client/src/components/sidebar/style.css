@@ -30,3 +30,17 @@ aside ul li button {
 aside ul li button.secondary span {
   color: var(--text-primary);
 }
+
+@media (max-width: 559px) {
+  aside {
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 767px) {
+  aside {
+    width: 100%;
+    height: fit-content;
+  }
+}

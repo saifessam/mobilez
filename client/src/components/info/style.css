@@ -10,22 +10,6 @@
   border-radius: var(--border-radius);
 }
 
-.info .title {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.info .title span {
-  width: 400px;
-  font-size: var(--large-font);
-  text-align: center;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
 .info .image {
   max-width: 400px;
   aspect-ratio: 1/1;
@@ -37,6 +21,18 @@
   height: 100%;
   object-fit: contain;
   mix-blend-mode: multiply;
+}
+
+.info .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info .title span {
+  font-size: var(--large-font);
+  font-weight: 700;
 }
 
 .info .sets {
