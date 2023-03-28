@@ -1,5 +1,4 @@
 .device-card {
-  width: calc(25% - var(--spacing));
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
