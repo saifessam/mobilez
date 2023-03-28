@@ -11,7 +11,7 @@ function DeviceCard(props: Props) {
 	return (
 		<div className='device-card'>
 			<Link to={`/devices/${props.data._id}`} className="device-card-image">
-				<img src={require(`./../../../assets/images/${props.data.image}`)} alt={props.data.brand!} loading="lazy" />
+				<img src={require(`C:/Users/saife/Projects/mobilez/server/src/uploads/${props.data.image}`)} alt={props.data.brand!} loading="lazy" />
 			</Link>
 			<div className="device-card-details">
 				<span>{props.data.color} {props.data.brand} {props.data.model}</span>

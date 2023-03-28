@@ -52,7 +52,7 @@ function OrderCard(props: Props) {
 		return (
 			<div className="order-card">
 				<div className="order-card-image">
-					<img src={require(`./../../../assets/images/${device.image}`)} alt={device.brand!} loading="lazy" />
+					<img src={require(`C:/Users/saife/Projects/mobilez/server/src/uploads/${device.image}`)} alt={device.brand!} loading="lazy" />
 				</div>
 				<div className="order-card-details">
 					<span>{device.color} {device.brand} {device.model}</span>

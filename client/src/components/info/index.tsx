@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useAuthToken from '../../hooks/useAuthToken';
 import DeviceType from '../../types/device';
 import Message from '../../types/message';
@@ -15,6 +16,7 @@ function Info(props: Props) {
 	const authToken = useAuthToken();
 	const [orderData, setOrderData] = useState<OrderType>({ receiver: "", items: [{ device: props.data._id!, quantity: 1, price: props.data.price }], status: "SAVED" });
 	const [label, setLabel] = useState<Message>({ succeed: null, response: props.data.stock === 0 ? "Out of stock" : "Add to cart" });
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (authToken) setOrderData((prev) => ({ ...prev, receiver: authToken.id }));
@@ -36,7 +38,7 @@ function Info(props: Props) {
 	return (
 		<div className='info'>
 			<div className="image">
-				<img src={require(`./../../assets/images/${props.data.image}`)} alt={props.data.brand} loading="lazy" />
+				<img src={require(`C:/Users/saife/Projects/mobilez/server/src/uploads/${props.data.image}`)} alt={props.data.brand} loading="lazy" />
 			</div>
 			<div className="title">
 				<span>{props.data.color} {props.data.brand} {props.data.model}</span>
@@ -59,7 +61,7 @@ function Info(props: Props) {
 					<span>{props.data.condition}</span>
 				</div>
 			</div>
-			{!authToken ? undefined : <Button type="button" condition={label.succeed === null ? 'primary' : label.succeed ? 'success' : 'fail'} label={label.response!} disabled={props.data.stock === 0} action={addToCart} />}
+			<Button type="button" condition={label.succeed === null ? 'primary' : label.succeed ? 'success' : 'fail'} label={label.response!} disabled={props.data.stock === 0} action={!authToken ? () => navigate('/profile', { replace: true }) : addToCart} />
 		</div>
 	);
 }

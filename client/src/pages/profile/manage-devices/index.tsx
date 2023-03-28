@@ -17,8 +17,22 @@ function DashboardDevicesPage() {
 	async function handleSubmit(e: SyntheticEvent): Promise<void> {
 		e.preventDefault();
 		setLoading(true);
+
+		const formData = new FormData();
+		formData.append("type", data!.type);
+		formData.append("condition", data!.condition);
+		formData.append("brand", data!.brand);
+		formData.append("model", data!.model);
+		formData.append("color", data!.color);
+		formData.append("image", data!.image);
+		formData.append("ram", data!.ram);
+		formData.append("rom", data!.rom);
+		formData.append("price", data!.price.toString());
+		formData.append("sales", data!.sales.toString());
+		formData.append("stock", data!.stock.toString());
+
 		try {
-			const options: RequestInit = { method: "POST", body: new Blob([JSON.stringify(data)], { type: 'application/json' }), cache: "no-store", credentials: "include" };
+			const options: RequestInit = { method: "POST", body: formData, cache: "no-store", credentials: "include" };
 			const response = await fetch("/devices/create", options);
 			await response.json().then((data) => setMessage(data));
 		} catch (error) {

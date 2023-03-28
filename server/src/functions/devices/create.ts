@@ -9,7 +9,7 @@ async function create(req: Request, res: Response) {
 			if (emptyValue) return res.status(403).json({ succeed: false, response: `Device ${emptyValue[0]} can't be empty` });
 
 			// 2. Inserting device into the database
-			await Device.create(req.body);
+			await Device.create({ ...req.body, image: req.file?.filename });
 			return res.status(201).json({ succeed: true, response: "Device is created successfully" });
 		} catch (error) {
 			return res.status(400).json({ succeed: false, response: "Error creating device" });
