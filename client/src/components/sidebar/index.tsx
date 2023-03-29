@@ -30,7 +30,7 @@ function Sidebar(props: Props) {
 				{authToken && authToken.admin ? <li><Button type="button" condition={props.state.index === 3 ? "primary" : "secondary"} label="Manage orders" action={() => props.state.setIndex(3)} /></li> : undefined}
 				{authToken && authToken.admin ? <li><Button type="button" condition={props.state.index === 4 ? "primary" : "secondary"} label="Manage users" action={() => props.state.setIndex(4)} /></li> : undefined}
 			</ul>
-			<Button type='button' condition='primary' label='Sign out' action={handleSignOut} />
+			<Button type='button' condition='fail' label='Sign out' action={handleSignOut} />
 		</aside>
 	);
 }

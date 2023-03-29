@@ -31,7 +31,7 @@ function AuthorizationForm() {
 
 	return (
 		<Section alignment='main' centerContent>
-			<Form onSubmit={handleSubmit} title='Authorize' message={message} loading={loading} assistance>
+			<Form onSubmit={handleSubmit} title='Welcome' message={message} loading={loading}>
 				<EmailInput setter={setData} />
 				<PasswordInput setter={setData} />
 			</Form>

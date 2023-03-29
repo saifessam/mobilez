@@ -2,10 +2,22 @@ button.fail {
   background-color: var(--fail-color);
 }
 
-button.fail span {
-  color: var(--background-secondary);
+@media (prefers-color-scheme: light) {
+  button.fail span {
+    color: var(--background-secondary);
+  }
+
+  button.fail svg path {
+    fill: var(--background-secondary);
+  }
 }
 
-button.fail svg path {
-  fill: var(--background-secondary);
+@media (prefers-color-scheme: dark) {
+  button.fail span {
+    color: var(--text-primary);
+  }
+
+  button.fail svg path {
+    fill: var(--text-primary);
+  }
 }

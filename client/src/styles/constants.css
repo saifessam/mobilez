@@ -1,18 +1,9 @@
 :root {
   /* colors */
-  --background-primary: #f5f6f7;
-  --background-secondary: #ffffff;
-  --text-primary: #000000;
-  --text-primary-transparent: #000000c0;
-  --text-secondary: #8b8c89;
-  --text-secondary-transparent: #8b8c89c0;
-  --accent-color: #1d41ff;
-  --accent-color-transparent: #1d41ff85;
   --fail-color: #d90429;
   --success-color: #0ead69;
   --transparent-overlay: #000000bb;
   --gradient-shade: linear-gradient(180deg, #00000000 0%, #000000 100%);
-  --box-shadow: 0px 10px 25px 0px #adadad40;
 
   /*fonts*/
   --extra-small-font: clamp(8px, 10px, 12px);
@@ -27,4 +18,32 @@
   --half-spacing: 12px;
   --border-radius: 12px;
   --hover-border-radius: 24px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-primary: #f5f6f7;
+    --background-secondary: #ffffff;
+    --text-primary: #000000;
+    --text-primary-transparent: #000000c0;
+    --text-secondary: #8b8c89;
+    --text-secondary-transparent: #8b8c89c0;
+    --accent-color: #1d41ff;
+    --accent-color-transparent: #1d41ff85;
+    --box-shadow: 0px 10px 25px 0px #adadad40;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: #202124;
+    --background-secondary: #303134;
+    --text-primary: #ffffff;
+    --text-primary-transparent: #ffffffc0;
+    --text-secondary: #eeeeee;
+    --text-secondary-transparent: #eeeeeec0;
+    --accent-color: #4285f4;
+    --accent-color-transparent: #4285f485;
+    --box-shadow: 0px 10px 25px 0px #0e0d0d80;
+  }
 }

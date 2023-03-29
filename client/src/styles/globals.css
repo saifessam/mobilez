@@ -1,5 +1,4 @@
 .input-container {
-  width: 25vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -70,13 +69,13 @@
   resize: none;
 }
 
-@media (max-width: 559px) {
+@media (min-width: 560px) and (max-width: 767px) {
   .input-container {
     width: 100%;
   }
 }
 
-@media (min-width: 560px) and (max-width: 767px) {
+@media (max-width: 559px) {
   .input-container {
     width: 100%;
   }

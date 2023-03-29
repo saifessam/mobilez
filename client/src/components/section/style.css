@@ -74,16 +74,12 @@ section .section-body.grid {
 }
 
 section .section-body.grid > * {
-  width: 100%;
+  width: 100% !important;
 }
 
-@media (max-width: 559px) {
-  section .section-header span {
-    font-size: var(--medium-font);
-  }
-
+@media (min-width: 768px) and (max-width: 1023px) {
   section .section-body.grid {
-    grid-template-columns: repeat(auto-fit, minmax(calc(100% - var(--spacing)), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc(33.33% - var(--spacing)), 1fr));
   }
 }
 
@@ -93,8 +89,12 @@ section .section-body.grid > * {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (max-width: 559px) {
+  section .section-header span {
+    font-size: var(--medium-font);
+  }
+
   section .section-body.grid {
-    grid-template-columns: repeat(auto-fit, minmax(calc(33.33% - var(--spacing)), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc(100% - var(--spacing)), 1fr));
   }
 }

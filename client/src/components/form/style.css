@@ -1,4 +1,5 @@
 form {
+  width: calc(25vw + var(--spacing));
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -6,7 +7,6 @@ form {
   gap: var(--spacing);
   padding: var(--spacing);
   background-color: var(--background-secondary);
-
   border-radius: var(--border-radius);
 }
 
@@ -14,7 +14,7 @@ form .form-header {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -44,10 +44,6 @@ form .form-body .form-body-row {
   gap: var(--half-spacing);
 }
 
-form .form-body .form-body-row .input-container {
-  width: calc(calc(25vw / 2) - calc(var(--half-spacing) / 2));
-}
-
 form .form-footer {
   display: flex;
   flex-direction: column;
@@ -56,38 +52,14 @@ form .form-footer {
   gap: var(--half-spacing);
 }
 
-form .form-footer #assistance {
-  font-size: var(--small-font);
-  font-weight: 400;
-  color: var(--text-secondary);
-  text-align: center;
-}
-
-form .form-footer #assistance a {
-  font-size: var(--small-font);
-  color: var(--accent-color);
-}
-
-form .form-footer #assistance a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 559px) {
-  form {
-    width: 100%;
-  }
-
-  form .form-body .form-body-row .input-container {
-    width: 100%;
-  }
-}
-
 @media (min-width: 560px) and (max-width: 767px) {
   form {
     width: 100%;
   }
+}
 
-  form .form-body .form-body-row .input-container {
+@media (max-width: 559px) {
+  form {
     width: 100%;
   }
 }

@@ -60,7 +60,7 @@
   }
 }
 
-@media (max-width: 559px) {
+@media (min-width: 560px) and (max-width: 767px) {
   .loading span {
     font-size: var(--large-font);
   }
@@ -70,7 +70,7 @@
   }
 }
 
-@media (min-width: 560px) and (max-width: 767px) {
+@media (max-width: 559px) {
   .loading span {
     font-size: var(--large-font);
   }

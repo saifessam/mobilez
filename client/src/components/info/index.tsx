@@ -37,11 +37,11 @@ function Info(props: Props) {
 
 	return (
 		<div className='info'>
-			<div className="image">
-				<img src={`http://localhost:4000/uploads/${props.data.image}`} alt={props.data.brand} loading="lazy" />
-			</div>
 			<div className="title">
 				<span>{props.data.color} {props.data.brand} {props.data.model}</span>
+			</div>
+			<div className="image">
+				<img src={`http://localhost:4000/uploads/${props.data.image}`} alt={props.data.brand} loading="lazy" />
 			</div>
 			<div className="sets">
 				<div className="set">

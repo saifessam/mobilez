@@ -2,10 +2,22 @@ button.primary {
   background-color: var(--accent-color);
 }
 
-button.primary span {
-  color: var(--background-secondary);
+@media (prefers-color-scheme: light) {
+  button.primary span {
+    color: var(--background-secondary);
+  }
+
+  button.primary svg path {
+    fill: var(--background-secondary);
+  }
 }
 
-button.primary svg path {
-  fill: var(--background-secondary);
+@media (prefers-color-scheme: dark) {
+  button.primary span {
+    color: var(--text-primary);
+  }
+
+  button.primary svg path {
+    fill: var(--text-primary);
+  }
 }

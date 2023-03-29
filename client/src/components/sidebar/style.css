@@ -1,14 +1,13 @@
 aside {
-  min-width: 20%;
+  position: sticky;
+  top: calc(4rem + var(--spacing));
+  width: 20vw;
   height: calc(100vh - 8rem - calc(var(--spacing) * 2));
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  gap: var(--spacing);
-  padding: var(--spacing);
-  background-color: var(--background-secondary);
-  border-radius: var(--border-radius);
+  gap: var(--half-spacing);
 }
 
 aside ul {
@@ -18,6 +17,9 @@ aside ul {
   justify-content: flex-start;
   align-items: stretch;
   gap: var(--half-spacing);
+  padding: var(--spacing);
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius);
   overflow: hidden;
   overflow-y: auto;
 }
@@ -31,10 +33,12 @@ aside ul li button.secondary span {
   color: var(--text-primary);
 }
 
-@media (max-width: 559px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   aside {
     width: 100%;
     height: fit-content;
+    position: static;
+    top: unset;
   }
 }
 
@@ -42,5 +46,16 @@ aside ul li button.secondary span {
   aside {
     width: 100%;
     height: fit-content;
+    position: static;
+    top: unset;
+  }
+}
+
+@media (max-width: 559px) {
+  aside {
+    width: 100%;
+    height: fit-content;
+    position: static;
+    top: unset;
   }
 }

@@ -12,7 +12,6 @@ interface Props {
 	children: React.ReactNode;
 	message: Message;
 	loading: boolean;
-	assistance?: boolean;
 }
 
 function Form(props: Props) {
@@ -38,7 +37,6 @@ function Form(props: Props) {
 			</div>
 			<div className="form-footer">
 				<Button type="submit" condition={label.succeed === null ? 'primary' : label.succeed ? 'success' : 'fail'} label={label.response!} />
-				{props.assistance ? <span id='assistance'>Having any troubles? <Link to={'/support'}>Get help</Link></span> : undefined}
 			</div>
 		</form>
 	);

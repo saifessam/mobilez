@@ -20,7 +20,7 @@ function ProfilePage() {
 		return <AuthorizationForm />;
 	} else {
 		return (
-			<Section alignment={windowSize.width! < 767 ? "column" : "row"} addSpacing>
+			<Section alignment={windowSize.width! < 1023 ? "column" : "row"} addSpacing>
 				<Sidebar state={{ index, setIndex }} />
 				{tabs[index]}
 			</Section>

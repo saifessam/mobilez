@@ -10,19 +10,6 @@
   border-radius: var(--border-radius);
 }
 
-.info .image {
-  max-width: 400px;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-}
-
-.info .image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-}
-
 .info .title {
   display: flex;
   flex-direction: column;
@@ -33,6 +20,18 @@
 .info .title span {
   font-size: var(--large-font);
   font-weight: 700;
+}
+
+.info .image {
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.info .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .info .sets {
