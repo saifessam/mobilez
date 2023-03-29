@@ -22,6 +22,10 @@ header .header-section h1 {
   color: var(--accent-color);
 }
 
+header .header-section p {
+  font-weight: 400;
+}
+
 header .header-section img {
   width: 90%;
   height: 90%;
