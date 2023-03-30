@@ -2,13 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import Footer from "../components/footer";
 import Main from "../components/main";
 import Navbar from "../components/navbar";
-import useAuthToken from "../hooks/useAuthToken";
-import DevicesPage from "../pages/devices/all";
-import DevicePage from "../pages/devices/one";
-import ProfilePage from "../pages/profile";
-import CartPage from './../pages/cart';
-import ErrorPage from './../pages/error';
-import HomePage from './../pages/home';
+import useAuthToken from "../hooks/auth-token";
+import CartPage from '../pages/cart-page';
+import DevicePage from "../pages/device-page";
+import DevicesPage from "../pages/devices-page";
+import ErrorPage from '../pages/error-page';
+import HomePage from '../pages/home-page';
+import ProfilePage from "../pages/profile-page";
 
 function MainLayout() {
 	const authToken = useAuthToken();

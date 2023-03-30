@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import useAuthToken from '../../hooks/useAuthToken';
+import useAuthToken from '../../hooks/auth-token';
 import './style.css';
 
 function Navbar() {
