@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import DeviceCard from '../../../components/cards/device';
+import DeviceCard from '../../../components/device-card';
 import Loading from '../../../components/loading';
 import Section from "../../../components/section";
+import getDevices from '../../../services/get-devices';
 import DeviceType from '../../../types/device';
 
 function DevicesPage() {
@@ -9,19 +10,7 @@ function DevicesPage() {
 
 	useEffect(() => {
 		const controller: AbortController = new AbortController();
-
-		async function getDevices(): Promise<void> {
-			try {
-				const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default" };
-				const response: DeviceType[] = await (await fetch("/devices", options)).json();
-				setDevices(response);
-			} catch (error) {
-				console.error("Request error", error);
-			}
-		}
-
-		getDevices();
-
+		getDevices({ setDevices });
 		return () => controller.abort();
 	}, []);
 

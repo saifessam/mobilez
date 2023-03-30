@@ -1,27 +1,17 @@
 import { useEffect, useState } from "react";
-import DeviceCard from "../../components/cards/device";
-import Header from "../../components/header";
+import DeviceCard from "../../components/device-card";
 import Loading from "../../components/loading";
+import getDevices from "../../services/get-devices";
 import DeviceType from "../../types/device";
 import Section from "./../../components/section";
+import Header from "./components/header";
 
 function HomePage() {
 	const [devices, setDevices] = useState<DeviceType[]>();
 
 	useEffect(() => {
 		const controller: AbortController = new AbortController();
-
-		async function getDevices(): Promise<void> {
-			try {
-				const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default" };
-				const response = await fetch("/devices/limited/8", options);
-				await response.json().then((data: DeviceType[]) => setDevices(data));
-			} catch (error) {
-				console.error("Request error", error);
-			}
-		}
-
-		getDevices();
+		getDevices({ limit: 8, setDevices });
 		return () => controller.abort();
 	}, []);
 

@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
-import OrderCard from "../../components/cards/order";
-import Checkout from "../../components/checkout";
+import OrderCard from "./components/order-card";
+import Checkout from "./components/checkout";
 import Loading from "../../components/loading";
 import Message from "../../components/message";
 import Section from "../../components/section";
 import useAuthToken from "../../hooks/useAuthToken";
 import useWindowSize from "../../hooks/useWindowSize";
+import getOrders from "../../services/get-orders";
 import OrderType from "../../types/order";
+
+declare type CheckoutValues = {
+	price: number;
+	quantity: number;
+};
 
 function CartPage() {
 	const [loading, setLoading] = useState<boolean>(true);
@@ -16,37 +22,16 @@ function CartPage() {
 
 	useEffect(() => {
 		const controller: AbortController = new AbortController();
-
-		async function getOrders(id: string): Promise<void> {
-			try {
-				const options: RequestInit = { method: "GET", headers: { "Content-Type": "application/json" }, cache: "default", credentials: "include" };
-				const response: OrderType = await (await fetch(`/orders/cart/${id}`, options)).json();
-				setItems(response.items);
-			} catch (error) {
-				console.error("Request error", error);
-			} finally {
-				setLoading(false);
-			}
-		}
-
-		if (authToken) getOrders(authToken.id);
+		if (authToken) getOrders({ id: authToken.id, setter: setItems, loading: setLoading });
 		return () => controller.abort();
 	}, [authToken]);
 
-	function getTotalCount(): number {
-		let total: number = 0;
-
-		items.map((item) => total += item.quantity);
-
-		return total;
-	}
-
-	function getPrice(): number {
-		let total: number = 0;
-
-		items.map((item) => total += item.price);
-
-		return total;
+	function getCheckoutValues(): CheckoutValues {
+		let price: number = 0;
+		let quantity: number = 0;
+		items.map((item) => price += item.price);
+		items.map((item) => quantity += item.quantity);
+		return { price, quantity };
 	}
 
 	if (loading) {
@@ -59,14 +44,12 @@ function CartPage() {
 				</Section>
 			);
 		} else {
-			console.log("getTotalCount ==>", getTotalCount());
-
 			return (
 				<Section alignment={windowSize.width! < 767 ? "column" : "row"} addSpacing>
 					<Section alignment="column" addSpacing>
 						{items.map((order) => <OrderCard id={order.device} quntity={order.quantity} price={order.price} key={order._id} />)}
 					</Section>
-					<Checkout count={items.length} totalCount={getTotalCount()} price={getPrice()} />
+					<Checkout count={items.length} totalCount={getCheckoutValues().quantity} price={getCheckoutValues().price} />
 				</Section>
 			);
 		}
