@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import OrderCard from "../components/cards/order";
 import Loading from "../components/loading";
 import Message from "../components/message";
@@ -26,13 +26,15 @@ function CartPage() {
 		return () => controller.abort();
 	}, [authToken]);
 
-	function getCheckoutValues(): CheckoutValues {
+	function checkoutValues(): CheckoutValues {
 		let price: number = 0;
 		let quantity: number = 0;
 		items.map((item) => price += item.price);
 		items.map((item) => quantity += item.quantity);
 		return { price, quantity };
 	}
+
+	const getCheckoutValues = useMemo(() => checkoutValues, [items]);
 
 	if (loading) {
 		return <Loading message="Loading..." />;

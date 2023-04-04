@@ -56,3 +56,23 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+@media (max-width: 559px) {
+  .order-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .order-card .order-card-image {
+    width: 100%;
+    align-self: center;
+  }
+
+  .order-card .order-card-details {
+    align-items: center;
+  }
+
+  .order-card .order-card-actions button {
+    width: 100%;
+  }
+}
