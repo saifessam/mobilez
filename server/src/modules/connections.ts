@@ -4,7 +4,7 @@ import { Mongoose } from 'mongoose';
 export async function databaseConnect(database: Mongoose) {
 	try {
 		database.set('strictQuery', false);
-		await database.connect("mongodb://127.0.0.1:27017", { dbName: "Mobilez" });
+		await database.connect("mongodb://127.0.0.1:27017/mobilez");
 		console.log("✅  Database is connected successfully");
 	} catch (error) {
 		console.error("🚫  Error connecting to database\n", error);
